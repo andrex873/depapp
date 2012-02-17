@@ -2,10 +2,15 @@
 <html lang="es"> 
     <head>
         <title>Principal de Drogas APP</title> 
-        <meta charset="utf-8" />        
+        <meta charset="utf8"/>         
         <?php $this->headLink()->appendStylesheet('/css/app.css') ?>
     </head>
-    <body> 
+    <body>
+        <?php if(Zend_Auth::getInstance()->hasIdentity()){ ?>
+        <div>
+            <h2>Soy usuario logueado</h2>
+        </div>
+        <?php } ?>
         <?php echo $this->layout()->content; ?>         
     </body> 
 </html>
