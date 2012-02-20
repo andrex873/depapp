@@ -3,25 +3,39 @@
         padding: 1em;
         background-color: white;
         display: block;
-        width: 300px;        
+        width: 250px;        
         margin: 11em auto; 
         border: 1px solid #c5c5c6;
         border-radius: 7px;
         box-shadow: 0px 0px 10px silver;
-    }    
-    
+    }        
     .frm_label{        
         font-family: Arial,"Bitstream Vera Sans",Helvetica,Verdana,sans-serif;
         font-size: 17pt;        
-        color: #dedddd;
-    }
-    
-    .frm_input{
-        color: #dedddd;
-        padding: 5px;
-        border-radius: 3px;
-        font-size: 16px;
+        color: #333333;        
     }    
+    .frm_input{        
+        color: #7b7b7c;
+        background-color: #F5F5F5;
+        padding: 5px;
+        border: 1px solid #4D90FE;
+        font-size: 22px;        
+    }    
+    .btn-submit{
+        height: 30px;
+        background-color: #4D90FE;
+        background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+        border: 1px solid #3079ED;
+        color: #FFFFFF;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    }
+    .btn-submit:hover{
+        background-color: #357AE8;
+        background-image: -moz-linear-gradient(center top , #4D90FE, #357AE8);
+        border: 1px solid #2F5BB7;
+        color: #FFFFFF;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    }
 </style>
 
 <div class="dv_frm">
@@ -37,7 +51,7 @@
             <input type="password" name="in_pass" value="" id="in_pass" class="frm_input" required />
         </p>
         <p>
-            <input type="submit" name="in_enviar" value="Ingresar" />
+            <input type="submit" name="in_enviar" value="Ingresar" class="btn-submit" />
         </p>                                           
     </form>
 </div>

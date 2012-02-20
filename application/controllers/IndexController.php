@@ -26,10 +26,10 @@ class IndexController extends Zend_Controller_Action
 
             $auAdapter->setIdentity($post['in_user'])
                     ->setCredential(md5($post['in_pass']));
-            $autenticacion = Zend_Auth::getInstance();
-            $res = $autenticacion->authenticate($auAdapter);                        
+            $auInstance = Zend_Auth::getInstance();
+            $resultado = $auInstance->authenticate($auAdapter);                        
             
-            if ($res->isValid()) {
+            if ($resultado->isValid()) {
                 $usuario = $auAdapter->getResultRowObject(null, 'clave');
                 
                 $tPersona = new Application_Model_Personas();
