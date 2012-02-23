@@ -3,14 +3,26 @@
     <head>
         <title>Principal de Drogas APP</title> 
         <meta charset="utf8"/>         
+        
         <?php $this->headLink()->appendStylesheet('/css/app.css') ?>
+        
+        <?php $this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js") ?>
+        <?php //$this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js") ?>
+        
+        <?php //echo $this->headTitle() ?>
+        <?php echo $this->headLink() ?>
+        <?php //echo $this->headStyle() ?>
+        <?php echo $this->headScript() ?>
     </head>
-    <body>
+    <body>        
         <?php if(Zend_Auth::getInstance()->hasIdentity()){ ?>
         <div>
-            <h2>Soy usuario logueado</h2>
+            <h2>Soy usuario logueado</h2>            
         </div>
-        <?php } ?>
+        <nav style="border: 1px solid brown">
+            <?php echo $this->menuHelper() ?>
+        </nav>
+        <?php } ?>            
         <?php echo $this->layout()->content; ?> 
     </body> 
 </html>

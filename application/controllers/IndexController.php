@@ -17,6 +17,9 @@ class IndexController extends Zend_Controller_Action
         
     public function loginAction()
     {         
+        if(Zend_Auth::getInstance()->hasIdentity()){
+            $this->_redirect("/index/inicio");
+        }
         if ($this->getRequest()->isPost()) {
             $post = $this->getRequest()->getPost();            
             $auAdapter = new Zend_Auth_Adapter_DbTable();
@@ -34,15 +37,12 @@ class IndexController extends Zend_Controller_Action
                 
                 $tPersona = new Application_Model_Personas();
                 $persona = $tPersona->fetchRow("idPersona = '".$usuario->idPersona."'")->toArray();                
-                $persona['nombreTotal'] = $persona['primerNombre']." ".$persona['segundoNombre']." ".$persona['primerApellido']." ".$persona['segundoApellido'];
+                $persona['nombreTotal'] = trim($persona['primerNombre']." ".$persona['segundoNombre']." ".$persona['primerApellido']." ".$persona['segundoApellido']);
                 
                 $this->session->usuario = $usuario;                 
-                $this->session->persona = $usuario;                 
+                $this->session->persona = $persona;                                                 
                 
-                $this->view->usuario = $usuario;
-                $this->view->persona = $persona;
-                
-                $this->_forward("inicio");
+                $this->_redirect("/index/inicio");
             } else {
                 //$this->_redirect("/index/index");
             }
@@ -52,12 +52,15 @@ class IndexController extends Zend_Controller_Action
     public function logoutAction()
     {     
         Zend_Auth::getInstance()->clearIdentity();
+        Zend_Session::destroy(true);
         return $this->_redirect('/index/login');                
     }
 
     public function inicioAction()
-    {          
-        
+    {   
+        $sesion = new Zend_Session_Namespace(NS_SESSION);        
+        $this->view->usuario = $sesion->usuario;
+        $this->view->persona = $sesion->persona;
     }
 
 
