@@ -14,9 +14,9 @@ class IndexController extends Zend_Controller_Action
     {
         $this->_forward("login");
     }
-        
+
     public function loginAction()
-    {                 
+    {
         if(Zend_Auth::getInstance()->hasIdentity()){
             $this->_redirect("/index/inicio");
         }
@@ -51,23 +51,18 @@ class IndexController extends Zend_Controller_Action
     }
 
     public function logoutAction()
-    {     
+    {
         Zend_Auth::getInstance()->clearIdentity();
         Zend_Session::destroy(true);
         return $this->_redirect('/index/login');                
     }
 
     public function inicioAction()
-    {   
+    {
         $sesion = new Zend_Session_Namespace(NS_SESSION);        
         $this->view->usuario = $sesion->usuario;
-        $this->view->persona = $sesion->persona;
-        if($this->getRequest()->isPost()){
-            $post = $this->getRequest()->getPost();            
-            $post['texto2'] = "Esto es ótrá caden con eñe y mas coás ú.";
-            $this->_helper->json->sendJson($post);
-        }
+        $this->view->persona = $sesion->persona;        
     }
-
-
 }
+
+

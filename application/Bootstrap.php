@@ -8,7 +8,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $db = $this->getResource("db");        
         Zend_Registry::set("db", $db);
         return $db;
-    }
+    }       
     
     protected function _initRutahelpers()
     {        
