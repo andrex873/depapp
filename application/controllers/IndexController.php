@@ -16,7 +16,7 @@ class IndexController extends Zend_Controller_Action
     }
         
     public function loginAction()
-    {         
+    {                 
         if(Zend_Auth::getInstance()->hasIdentity()){
             $this->_redirect("/index/inicio");
         }
@@ -46,7 +46,8 @@ class IndexController extends Zend_Controller_Action
             } else {
                 //$this->_redirect("/index/index");
             }
-        }                                
+        }
+        //$this->_helper->multiples(30);
     }
 
     public function logoutAction()
@@ -61,6 +62,11 @@ class IndexController extends Zend_Controller_Action
         $sesion = new Zend_Session_Namespace(NS_SESSION);        
         $this->view->usuario = $sesion->usuario;
         $this->view->persona = $sesion->persona;
+        if($this->getRequest()->isPost()){
+            $post = $this->getRequest()->getPost();            
+            $post['texto2'] = "Esto es ótrá caden con eñe y mas coás ú.";
+            $this->_helper->json->sendJson($post);
+        }
     }
 
 

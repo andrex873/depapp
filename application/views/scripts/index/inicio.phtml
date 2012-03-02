@@ -1,3 +1,26 @@
+<script type="text/javascript">
+    jQuery.
+    $(document).on('ready', function(){
+        $('#a_ajax').on('click', function(){
+            $.ajax({
+                async:false,
+                url:'/index/inicio',
+                type:'post',
+                dataType:'json',
+                data:{nombre:'amendez', texto:'uná cádéna muy larga para decodificar con eñe o eÑE mas'},
+                error:function(){
+                    alert('salio mal el ajax');
+                },
+                success:function(response){
+                    $('#dv_ajax').text(response.texto2);                    
+                }
+            });
+        });
+    });
+    
+    
+    
+</script>
 <br /><br />
 <div id="" style="display: block">
     <a href="/index/logout">Salir</a>
@@ -5,3 +28,9 @@
 <div>
     <li>Usuario: <?php echo $this->persona['nombreTotal']." (".$this->usuario->nombreUsuario.")"; ?></li>
 </div>
+<div>
+    <a id="a_ajax" href="#">Click me</a>
+</div>
+<div id="dv_ajax">
+</div>
+

@@ -16,9 +16,9 @@ class Zend_View_Helper_MenuHelper extends Zend_View_Helper_Abstract
         $gMenu = array();
         foreach($dMenu as $key => $value){
             $gMenu[$value['idPadre']][] = $value;
-        } 
+        }         
         $html = $this->getHtmlMenu($gMenu); 
-        $sesion->htmlMenu = $html;
+        $sesion->htmlMenu = $html;       
         return $html;
     }        
 
@@ -38,8 +38,21 @@ class Zend_View_Helper_MenuHelper extends Zend_View_Helper_Abstract
         return $html;
     }
     
-    private function getArrayMenu(){
-        
+    private function getArrayMenu($gMenu, $idPadre = 0){
+        $menu = Array();
+        $gPadre = $gMenu[$idPadre];
+        foreach($gPadre as $key => $value){                                    
+            $obj = new stdClass();
+            $obj->text = $value['nombre'];
+            $obj->ruta = $value['ruta'];
+            $obj->handler = "onClickItem(this)";            
+            if( count($gMenu[$value['idMenu']]) > 0 ){                
+                $obj->menu = $this->getArrayMenu($gMenu, $value['idMenu']);                
+            }            
+            $menu[] = $obj;
+        }
+        return $menu;
     }
 }
+
 ?>
