@@ -16,8 +16,7 @@ $(document).on('ready', function(){
             var allMenu = setMenu(gMenu, 0);
             
             Ext.create('Ext.toolbar.Toolbar', {
-                renderTo: document.getElementById('dv_menu'),
-                width   : 400,
+                renderTo: document.getElementById('dv_menu'),                
                 items: allMenu
             });             
         }

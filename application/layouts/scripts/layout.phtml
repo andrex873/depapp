@@ -1,4 +1,3 @@
-<?php $logueado = Zend_Auth::getInstance()->hasIdentity(); ?>
 <!DOCTYPE html>
 <html lang="es"> 
     <head>
@@ -9,24 +8,12 @@
         
         <?php $this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
         <?php $this->headScript()->appendFile("/js/functions.js"); ?>
-                
+        
         <?php echo $this->headLink() ?>        
         <?php echo $this->headScript() ?>        
     </head>
     <body>
-        <div id="dv_main">
-            <?php if($logueado){ ?>
-            <div>
-                <h2>Soy usuario logueado</h2>            
-            </div>
-            <nav style="border: 1px solid brown">
-                <?php echo $this->menuHelper() ?>            
-                <link href="/css/extjs4/ext-all.css" rel="stylesheet" />
-                <script type="text/javascript" src="/js/ext-all.js"></script>
-                <script type="text/javascript" src="/js/menu.js"></script>
-                <div id="dv_menu"></div>
-            </nav>
-            <?php } ?>            
+        <div>             
             <?php echo $this->layout()->content; ?>         
         </div>
     </body> 

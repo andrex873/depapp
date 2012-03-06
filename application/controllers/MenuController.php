@@ -10,7 +10,7 @@ class MenuController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $sesion = new Zend_Session_Namespace(NS_SESSION);        
+        $sesion = new Zend_Session_Namespace(NS_SESSION);                
         // Cache del menu para no consultarlo cada vez q se actualiza la pagina
         if(isset($sesion->menuAgrupado)){
             $this->_helper->json->sendJson($sesion->menuAgrupado);
@@ -21,17 +21,14 @@ class MenuController extends Zend_Controller_Action
         $gMenu = array();
         foreach($dMenu as $key => $value){
             $gMenu[$value['idPadre']][] = $value;
-        }                 
-        
-        
+        }                                 
         $sesion->menuAgrupado = $gMenu;
         $this->_helper->json->sendJson($gMenu);    
-
-//        $menuAgrupado = $this->getArrayMenu($gMenu);                  
-//        $sesion->menuAgrupado = $menuAgrupado;
-//        $this->_helper->json->sendJson($menuAgrupado);        
     }
     
+    /*
+     * Formas de generar el Menu recorriendolo de forma dinamica
+     * 
     private function getArrayMenu($gMenu, $idPadre = 0){
         $menu = Array();
         $gPadre = $gMenu[$idPadre];
@@ -46,7 +43,24 @@ class MenuController extends Zend_Controller_Action
         }
         return $menu;
     }
-
+    
+    private function getHtmlMenu($gMenu, $idPadre = 0) {
+        $html = "";
+        $gPadre = $gMenu[$idPadre];
+        $html .= "<ul>";
+        foreach($gPadre as $key => $value){                                    
+            $html .= "<li>";            
+            $html .= "<a href='{$value['ruta']}'>{$value['nombre']}</a>";
+            if( count($gMenu[$value['idMenu']]) > 0 ){
+                $html .= $this->getHtmlMenu($gMenu, $value['idMenu']);
+            }
+            $html .= "</li>";
+        }
+        $html .= "</ul>";
+        return $html;
+    }
+    
+    */
 
 }
 

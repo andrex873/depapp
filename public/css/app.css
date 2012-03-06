@@ -7,18 +7,29 @@ html {
     background-color: #F5F5F5;
 }
 
-body {
-    /*background-color: #dedddd;*/
-    background-color: #F5F5F5;
-    font-size: 12pt;    
+body {    
+    font-family: tahoma,arial,verdana,sans-serif;
+    font-size: 12px;
 }
-div#dv_main{
-    padding: 0 15px 0 15px;
+nav#nav_menu{    
+    width: 1024px;
+    margin: 0 auto;
+}
+div#dv_main{        
+    background-color: white;
     border: 1px solid silver;
     margin: 0 auto;
     display: block;
     width: 1024px;
-    height: 100%;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 30px #3d3c3d;
+    height: 85%; 
+}
+.right{
+    text-align: right;
+}
+.left{
+    text-align: left;
+}
+
+.border{
+    border: 1px dotted red;
 }

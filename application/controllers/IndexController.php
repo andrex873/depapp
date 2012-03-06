@@ -36,8 +36,7 @@ class IndexController extends Zend_Controller_Action
                 $usuario = $auAdapter->getResultRowObject(null, 'clave');
                 
                 $tPersona = new Application_Model_Personas();
-                $persona = $tPersona->fetchRow("idPersona = '".$usuario->idPersona."'")->toArray();                
-                $persona['nombreTotal'] = trim($persona['primerNombre']." ".$persona['segundoNombre']." ".$persona['primerApellido']." ".$persona['segundoApellido']);
+                $persona = $tPersona->fetchRow("idPersona = '".$usuario->idPersona."'");                
                 
                 $this->session->usuario = $usuario;                 
                 $this->session->persona = $persona;                                                 
@@ -46,8 +45,7 @@ class IndexController extends Zend_Controller_Action
             } else {
                 //$this->_redirect("/index/index");
             }
-        }
-        //$this->_helper->multiples(30);
+        }        
     }
 
     public function logoutAction()
@@ -59,9 +57,7 @@ class IndexController extends Zend_Controller_Action
 
     public function inicioAction()
     {
-        $sesion = new Zend_Session_Namespace(NS_SESSION);        
-        $this->view->usuario = $sesion->usuario;
-        $this->view->persona = $sesion->persona;        
+        
     }
 }
 

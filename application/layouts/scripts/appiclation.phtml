@@ -1,0 +1,43 @@
+<?php $logueado = Zend_Auth::getInstance()->hasIdentity(); ?>
+<!DOCTYPE html>
+<html lang="es"> 
+    <head>
+        <title>Principal de Drogas APP</title> 
+        <meta charset="utf8"/>         
+        
+        <?php $this->headLink()->appendStylesheet('/css/app.css'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/extjs4/ext-all.css'); ?>
+        
+        <?php $this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
+        <?php $this->headScript()->appendFile("/js/functions.js"); ?>
+        <?php $this->headScript()->appendFile("/js/ext-all.js"); ?>
+        <?php $this->headScript()->appendFile("/js/menu.js"); ?>
+                        
+        <?php echo $this->headLink() ?>        
+        <?php echo $this->headScript() ?>        
+    </head>
+    <body>
+        <header style="height: 8em; display: block;">            
+            <img src="" alt="" />
+            <p>Soy usuario logueado</p>
+            <p class="border right">
+                <?php echo $this->nombreUsuarioHelper('NOMBRE_HEADER') ?>
+            </p>
+            <p class="border right">
+                <a href="/index/logout">Salir</a>
+            </p>
+        </header>            
+        <div style="display: block; height: 3px; background-color: #357AE8"></div>
+        <nav id="nav_menu"> 
+            <div id="dv_menu"></div>
+        </nav>
+        <div id="dv_main"> 
+            <div style="overflow: auto; height: 100%;" class="border">
+                <?php echo $this->layout()->content; ?>         
+            </div>
+        </div>
+        <footer>
+            texto de footer
+        </footer>
+    </body> 
+</html>
