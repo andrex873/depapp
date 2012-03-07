@@ -21,8 +21,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $layout = Zend_Layout::getMvcInstance();                        
         if(Zend_Auth::getInstance()->hasIdentity()){
             $layout->setLayout("appiclation");
-        }else{
-            $layout->setLayout("layout");
+        }else{ 
+            $layout->setLayout("layout");            
         }
     }
 

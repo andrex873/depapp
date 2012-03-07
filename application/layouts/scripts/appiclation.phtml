@@ -4,7 +4,9 @@
     <head>
         <title>Principal de Drogas APP</title> 
         <meta charset="utf8"/>         
-        
+        <!-- Etiqueta compatibilidad IE con Chrome frame -->
+        <meta http-equiv="X-UA-Compatible" content="chrome=1"> 
+                                        
         <?php $this->headLink()->appendStylesheet('/css/app.css'); ?>
         <?php $this->headLink()->appendStylesheet('/css/extjs4/ext-all.css'); ?>
         
@@ -16,7 +18,7 @@
         <?php echo $this->headLink() ?>        
         <?php echo $this->headScript() ?>        
     </head>
-    <body>
+    <body>        
         <header style="height: 8em; display: block;">            
             <img src="" alt="" />
             <p>Soy usuario logueado</p>
@@ -32,7 +34,7 @@
             <div id="dv_menu"></div>
         </nav>
         <div id="dv_main"> 
-            <div style="overflow: auto; height: 100%;" class="border">
+            <div style="overflow: auto; height: 100%;" class="">
                 <?php echo $this->layout()->content; ?>         
             </div>
         </div>

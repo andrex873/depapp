@@ -17,7 +17,7 @@ $(document).on('ready', function(){
             
             Ext.create('Ext.toolbar.Toolbar', {
                 renderTo: document.getElementById('dv_menu'),                
-                items: allMenu
+                items: allMenu                
             });             
         }
     });
@@ -33,6 +33,7 @@ $(document).on('ready', function(){
             var obj = new Object();
             obj.text = valor['nombre'];             
             obj.ruta = valor['ruta']; 
+            obj.icon = valor['icon'];
             if(obj.ruta != '#'){ 
                 obj.handler = function(){                    
                     redireccionar(this.ruta);
