@@ -29,7 +29,9 @@ div#dv_main{
 .left{
     text-align: left;
 }
-
+.center{
+    text-align: center;
+}
 .border{
     border: 1px dotted red;
 }

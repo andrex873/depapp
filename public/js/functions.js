@@ -1,4 +1,3 @@
-
 /**
  * Funcion para redireccionar peticiones medinete documento.location.
  * 
