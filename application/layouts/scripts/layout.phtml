@@ -11,8 +11,15 @@
         <?php $this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
         <?php $this->headScript()->appendFile("/js/functions.js"); ?>
         
+        <!-- [inicio] Estilos css --> 
         <?php echo $this->headLink() ?>        
-        <?php echo $this->headScript() ?>        
+        <?php echo $this->cssDinamicoHelper() ?>
+        <!-- [fin] Estilos css --> 
+        
+        <!-- [inicio] Archivos javascript --> 
+        <?php echo $this->headScript() ?>
+        <?php echo $this->javascriptDinamicoHelper() ?>
+        <!-- [fin] Archivos javascript --> 
     </head>
     <body>        
         <div>             

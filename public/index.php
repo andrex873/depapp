@@ -8,7 +8,7 @@ defined('APPLICATION_PATH')
 defined('APPLICATION_ENV')
     || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
 
-// Definir nombre del nameSpace de la Sesión
+// Define el nombre del NameSpace de la Sesión
 defined('NS_SESSION')
     || define('NS_SESSION', 'GLOBAL');
 
