@@ -6,9 +6,10 @@
         <!-- -->
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         
-        <?php $this->headLink()->appendStylesheet('/css/app.css'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/app.css'); ?>                
         
-        <?php $this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
+        <?php //$this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
+        <?php $this->headScript()->appendFile("/js/jquery-1.7.1.min.js"); ?>
         <?php $this->headScript()->appendFile("/js/functions.js"); ?>
         
         <!-- [inicio] Estilos css --> 
@@ -21,7 +22,7 @@
         <?php echo $this->javascriptDinamicoHelper() ?>
         <!-- [fin] Archivos javascript --> 
     </head>
-    <body>        
+    <body class="app">        
         <div>             
             <?php echo $this->layout()->content; ?>         
         </div>

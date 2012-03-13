@@ -25,6 +25,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             $layout->setLayout("layout");            
         }
     }
+    
+    protected function _initVerificarPermisos()
+    { 
+        
+    }
 
 }
 

@@ -1,17 +1,45 @@
 
-html, body{
+html.html-app, .html-app body{
     height: 100%;
 }
-
 html {        
     background-color: #F5F5F5;
 }
-
 body {    
+    color: black;
     font-family: tahoma,arial,verdana,sans-serif;
     font-size: 12px;
     margin: 5px;
 }
+.app fieldset{
+    border: 1px solid #666;
+    border-radius: 5px;
+    padding: 10px;
+}
+.app legend{
+    color: #666;
+    padding: 0 5px 0 5px;
+    font-weight: bold;
+}
+.app table{
+    width: 100%;
+}
+.app form input{
+    margin: 2px 0 2px 0;
+    padding: 4px;
+}
+.app select{
+    padding: 4px;
+}
+.form-label{
+    margin-bottom: 3px;
+    display: block;
+}
+.form-in{
+    margin-bottom: 10px;
+    display: block;
+}
+
 nav#nav_menu{    
     width: 1024px;
     margin: 0 auto;
@@ -22,7 +50,7 @@ div#dv_main{
     margin: 0 auto;
     display: block;
     width: 1024px;
-    height: 85%; 
+    height: 70%; 
     overflow: auto;
     padding: 5px; 
 }
