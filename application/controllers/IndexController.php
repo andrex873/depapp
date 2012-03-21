@@ -27,8 +27,8 @@ class IndexController extends Zend_Controller_Action
                     ->setIdentityColumn('nombreUsuario')
                     ->setCredentialColumn('clave');
 
-            $auAdapter->setIdentity($post['in_user'])
-                    ->setCredential(md5($post['in_pass']));
+            $auAdapter->setIdentity($post['nombreusuario'])
+                    ->setCredential(md5($post['claveusuario']));
             $auInstance = Zend_Auth::getInstance();
             $resultado = $auInstance->authenticate($auAdapter);                        
             

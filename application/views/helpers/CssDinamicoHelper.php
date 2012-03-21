@@ -15,7 +15,7 @@ class Zend_View_Helper_CssDinamicoHelper extends Zend_View_Helper_Abstract
                 
         $rutaBase   = APPLICATION_PATH . "/../public";
         $archivo    = "/css/scripts/{$controller}_{$view}.css";        
-        $rutaTotal  = $rutaBase . "/css/scripts/{$controller}_{$view}.css";        
+        $rutaTotal  = $rutaBase . $archivo;        
         $str = "";
         if(file_exists($rutaTotal)){
             $str = "<link type='text/css' rel='stylesheet' href='{$archivo}'>";

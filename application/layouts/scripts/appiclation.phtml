@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="html-app"> 
+<html lang="es"> 
     <head>
         <title>Principal de Drogas APP</title> 
         <meta charset="utf8"/>         
@@ -7,11 +7,11 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1"> 
               
         <?php $this->headLink()->appendStylesheet('/css/extjs4/ext-all.css'); ?>
-        <?php $this->headLink()->appendStylesheet('/css/app.css'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/estilos.css'); ?>
         
         <?php //$this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
         <?php $this->headScript()->appendFile("/js/jquery-1.7.1.min.js"); ?>
-        <?php $this->headScript()->appendFile("/js/functions.js"); ?>
+        <?php $this->headScript()->appendFile("/js/scripts.js"); ?>
         <?php $this->headScript()->appendFile("/js/ext-all.js"); ?>
         <?php $this->headScript()->appendFile("/js/menu.js"); ?>
         
@@ -25,8 +25,8 @@
         <?php echo $this->javascriptDinamicoHelper() ?>
         <!-- [fin] Archivos javascript -->
     </head>
-    <body class="app">        
-        <header style="height: 8em; display: block;">            
+    <body>        
+        <header style="height: 8em; display: block; border-bottom: 3px solid #357AE8;">            
             <img src="" alt="" />
             <p>Soy usuario logueado</p>
             <p class="right">
@@ -36,12 +36,17 @@
                 <a href="/index/logout">Salir</a>
             </p>
         </header>            
-        <div style="display: block; height: 3px; background-color: #357AE8"></div>
-        <nav id="nav_menu"></nav>
-        <div id="dv_main"> 
-            
-            <?php echo $this->layout()->content; ?>         
-            
+        <div id="dv_main">
+            <nav id="nav_menu" class=""></nav>
+            <div id="dv_mensajes_container" class="">
+                <div id="dv_mensajes" style="height: 15em; width: 100%; border-bottom: 1px solid #e2e1e1; display: none;">
+                    <?php print_r($this->mensajesHelper()) ?>                    
+                </div>
+                <p id="p_mensajes" data-opc="hide" class="center" style="width: 110px; padding: 5px; background-color: #e2e1e1; margin: 0 auto; border-radius: 0 0 5px 5px; cursor: pointer;">ver mensajes</p>
+            </div>
+            <div id="dv_contenido" class="">             
+                <?php echo $this->layout()->content; ?> 
+            </div>
         </div>
         <footer class="center">
             texto de footer

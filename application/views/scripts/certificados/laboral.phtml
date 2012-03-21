@@ -1,31 +1,76 @@
-<div id="" style="border: 0px solid green;">
-    <form action="" method="post">
+<style>
+    .formLabel{
+        display: block;
+        padding: 3px;
+        margin: 4px 2px 3px 0;        
+        background-color: #e2e1e1;
+    }
+    .formInput{
+        padding: 4px;        
+        border: 1px solid #4D90FE; 
+        border-radius: 3px;
+    }
+    .formSelect{
+        padding: 4px;
+        border: 1px solid #4D90FE;
+    }            
+    .btnGeneral{
+        margin: 0 4px 0 4px;
+        padding: 3px 7px 3px 7px;
+        background-color: #4D90FE;
+        background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+        border: 1px solid #3079ED;
+        color: #FFFFFF;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    .btnGeneral:hover{
+        background-color: #357AE8;
+        background-image: -moz-linear-gradient(center top , #4D90FE, #357AE8);
+        border: 1px solid #2F5BB7;
+        color: #FFFFFF;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+    }
+    #contenedor_filtros{
+        width: 50em;
+        margin: 0 auto;
+    }        
+
+
+</style>
+<div id="contenedor_filtros" class="">
+    <form method="post" action="/certificados/laboral">    
         <fieldset>
-            <legend>Filtros</legend>
+            <legend>Buscar</legend>
             <table>
                 <tr>
                     <td>
-                        <label for="tipoDocumento" class="form-label">Tip. Documento</label>
-                    </td>
-                    <td>
-                        <label for="numeroDocumento" class="form-label">Num. Documento</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="tipoDocumento" id="tipoDocumento">
+                        <label for="tipoDocumento" class="formLabel">Tipo Documento</label>
+                        <select id="tipoDocumento" name="tipoDocumento" class="formSelect">
                             <option value="CC">CC</option>
-                            <option value="NIT">NIT</option>
+                            <option value="TI">TI</option>
+                            <option value="CE">CE</option>
                         </select>
                     </td>
                     <td>
-                        <input type="text" name="numeroDocumento" value="" id="numeroDocumento">
-                    </td>
+                        <label for="numeroDocumento" class="formLabel">Numero Documento</label>
+                        <input id="numeroDocumento" type="text" name="numeroDocumento" required="required" value="" class="formInput"/> 
+                    </td>                
+                    <td>
+                        <label for="dirigido" class="formLabel">Dirigido a</label>
+                        <input id="dirigido" type="text" name="dirigido" required="required" value="A QUIEN PUEDA INTERESAR" class="formInput"/> 
+                    </td>                
                 </tr>                
             </table>
-            <p>
-                <input type="submit" name="enviar" value="Buscar">
+            <p style="margin-top: 5px;" class="center">
+                <input type="submit" name="enviar" value="Generar" class="btn-general"/>                                
             </p>
         </fieldset>
     </form>
 </div>
+<?php if($this->filaPersona){ ?>
+<div>
+    <?php var_dump($this->filaPersona) ?>    
+</div>    
+<?php } ?>

@@ -1,0 +1,98 @@
+/**
+ * 
+ * 
+ */
+html, body{
+    height: 100%;
+}
+
+html{        
+    background-color: #F5F5F5;
+}
+
+body{    
+    font-family: tahoma,arial,verdana,sans-serif;
+    font-size: 12px;    
+}
+fieldset{
+    border: 1px solid #666;
+    padding: 0px 8px 8px 8px;
+    border-radius: 5px;
+}
+legend{
+    margin: 0px 5px 5px 5px;
+    padding: 0 5px 0 20px;
+    background: url('/img/magnifier.png') no-repeat 2px center; 
+}
+table{
+    width: 100%;
+}
+table tr td{
+    vertical-align: top;
+}
+#nav_menu{        
+}
+#dv_mensajes_container{
+    background-color: white;    
+}
+#dv_contenido{        
+    background-color: white;         
+    display: block;    
+    min-height: 550px; 
+    overflow: auto;
+    padding: 0px 7px 7px 7px; 
+    position: static;
+}
+#dv_main{
+    width: 1024px;
+    margin: 0 auto;
+    max-width: 1024px;
+    border-left: 1px solid #e2e1e1; 
+    border-right: 1px solid #e2e1e1; 
+    border-bottom: 1px solid #e2e1e1;
+}
+
+.btn-general {
+    font-size: 12px;
+    margin: 0;
+    color: #ffffff;
+    padding: 6px 12px;
+    background: -moz-linear-gradient(
+            top,
+            #4D90FE 0%,
+            #4787ED);
+    background: -webkit-gradient(
+            linear, left top, left bottom, 
+            from(#4D90FE),
+            to(#4787ED));
+    border-radius: 5px;	
+    border: 1px solid #3079ED;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+
+}
+.btn-general:hover {	
+    background: -moz-linear-gradient(
+            top,
+            #4787ED 0%,
+            #357AE8);
+    background: -webkit-gradient(
+            linear, left top, left bottom, 
+            from(#357AE8),
+            to(#4787ED));
+    border-radius: 5px;	
+    border: 1px solid #3079ED;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+
+}
+.right{
+    text-align: right;
+}
+.left{
+    text-align: left;
+}
+.center{
+    text-align: center;
+}
+.border{
+    border: 1px dotted red;
+}

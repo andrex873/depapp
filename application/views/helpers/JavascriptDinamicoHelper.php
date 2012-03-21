@@ -15,7 +15,7 @@ class Zend_View_Helper_JavascriptDinamicoHelper extends Zend_View_Helper_Abstrac
         
         $rutaBase   = APPLICATION_PATH . "/../public";
         $archivo    = "/js/scripts/{$controller}_{$view}.js"; 
-        $rutaTotal  = $rutaBase . "/js/scripts/{$controller}_{$view}.js";
+        $rutaTotal  = $rutaBase . $archivo;
         $str = "";
         if(file_exists($rutaTotal)){
             $str = "<script type='text/javascript'>
