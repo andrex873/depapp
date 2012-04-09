@@ -17,6 +17,9 @@ class IndexController extends Zend_Controller_Action
 
     public function loginAction()
     {
+        $form = new Application_Form_Login();
+        $this->view->form = $form;
+        
         if(Zend_Auth::getInstance()->hasIdentity()){
             $this->_redirect("/index/inicio");
         }
