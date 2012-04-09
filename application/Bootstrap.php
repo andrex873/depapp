@@ -30,6 +30,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     { 
         
     }
+    
+    protected function _initCargarFunciones()
+    {
+        Zend_Loader::loadFile('funciones.php', APPLICATION_PATH . '/../library/util');
+    }
+    
+    protected function _initConfiguracionRegional()
+    {        
+        $var = setlocale(LC_ALL, "es_ES.ISO_8859-1");
+        date_default_timezone_set('America/Bogota');
+    }
 
 }
-

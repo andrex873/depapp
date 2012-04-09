@@ -74,5 +74,7 @@
     <object data="/<?php echo $this->outDto->pdfPath ?>" type="application/pdf" width="100%" height="500">
     </object>
 </div>   
-<?php print_r($this->outDto->filaPersona->toArray()) ?>
+<?php print_r($this->outDto->filaPersona) ?>
+<br/>
+<?php echo date_default_timezone_get(); ?>
 <?php } ?>
