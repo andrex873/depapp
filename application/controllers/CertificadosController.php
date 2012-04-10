@@ -3,11 +3,16 @@
 class CertificadosController extends Zend_Controller_Action
 {
 
-    private $msg    = null;
+    private $mensajes    = array();
+
+    public function postDispatch() {
+        $this->view->mensajes = $this->mensajes;
+        parent::postDispatch();
+    }
 
     public function init()
     {
-        //$this->msg = $this->_helper->FlashMessenger;                
+        //$this->msg = $this->_helper->FlashMessenger; 
     }
 
     public function indexAction()
@@ -28,17 +33,20 @@ class CertificadosController extends Zend_Controller_Action
             $t_personas = new Application_Model_Personas();
             $filaPersona = $t_personas->getCertificacionLaboralInformacion($post['tipoDocumento'], $post['numeroDocumento']);                                                            
             if($filaPersona == false){
-                $msg = array('status' => 'E', 'msg' => 'El usuario no existe');
-                $outDto->existe = false;
-                $outDto->msg = $msg;                
-                //$this->_helper->FlashMessenger("error");
+                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
+                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
+                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
+                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
+                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
+                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
+                $this->mensajes[] = array('status' => 'S', 'msg' => 'El usuario no existe');
+                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
+                $this->mensajes[] = array('status' => 'S', 'msg' => 'El usuario no existe');
+                $outDto->existe = false;                
             }else{
-                $msg = array('status' => 'S', 'msg' => 'El usuario correcto');
-                $outDto->existe = true;
-                $outDto->msg = $msg;                
-                $outDto->filaPersona = $filaPersona;                
-                //$this->_helper->FlashMessenger("correcto");
-                
+                //$this->mensajes[] = array('status' => 'S', 'msg' => 'El usuario correcto');
+                $outDto->existe = true;                
+                $outDto->filaPersona = $filaPersona;                                                
                 
                 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, 'mm', PDF_PAGE_FORMAT, true, 'UTF-8', false);
                 
@@ -78,7 +86,8 @@ class CertificadosController extends Zend_Controller_Action
                 $pdf->Ln(20);
                 $pdf->Write(0, "El tipo de contrato es {$filaPersona['nombreTipoContrato']}");
                 $pdf->Ln(20);
-                $pdf->Write(0, "La presente se expide a solicitud del interesado el ".date("d")." de ".appMesNombre(date("m"))." de ".date("Y")." en la ciudad de bogotá, con destino ".$post['dirigido']);
+                list($anio, $mes, $dia) = explode("-", date("Y-m-d"));
+                $pdf->Write(0, "La presente se expide a solicitud del interesado el {$dia} de ".appMesNombre($mes)." de {$anio} en la ciudad de bogotá, con destino ".$post['dirigido']);
                 $pdf->Ln(50);
                 $pdf->Write(0, "Persona que firma");                
                 $pdf->Ln();

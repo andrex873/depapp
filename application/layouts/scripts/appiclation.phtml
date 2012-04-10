@@ -37,12 +37,15 @@
             </p>
         </header>            
         <div id="dv_main">
-            <nav id="nav_menu" class=""></nav>
-            <div id="dv_mensajes_container" class="">
-                <div id="dv_mensajes" style="height: 15em; width: 100%; border-bottom: 1px solid #e2e1e1; display: none;">
-                    <?php print_r($this->mensajesHelper()) ?>                    
+            <nav id="nav_menu"></nav>
+            <div id="dv_mensajes_container">
+                <div id="dv_mensajes" style="max-height: 11em; overflow: auto; width: 100%; border-bottom: 1px solid #e2e1e1; display: none;">
+                    <?php $objMensajes = $this->mensajesHelper() ?>                    
+                    <?php echo $objMensajes['html'] ?>                    
                 </div>
-                <p id="p_mensajes" data-opc="hide" class="center" style="width: 110px; padding: 5px; background-color: #e2e1e1; margin: 0 auto; border-radius: 0 0 5px 5px; cursor: pointer;">ver mensajes</p>
+                <p id="p_mensajes" data-opc="hide" data-num="<?php echo $objMensajes['count'] ?>" class="center" style="width: 180px; padding: 5px; background-color: #e2e1e1; margin: 0 auto; border-radius: 0 0 5px 5px; cursor: pointer;">
+                    Ver mensajes (<?php echo $objMensajes['count'] ?>)
+                </p>
             </div>
             <div id="dv_contenido" class="">             
                 <?php echo $this->layout()->content; ?> 

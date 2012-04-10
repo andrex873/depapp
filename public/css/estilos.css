@@ -51,7 +51,9 @@ table tr td{
     border-right: 1px solid #e2e1e1; 
     border-bottom: 1px solid #e2e1e1;
 }
-
+#mesajes_global{
+    list-style-type: circle;    
+}
 .btn-general {
     font-size: 12px;
     margin: 0;
@@ -95,4 +97,10 @@ table tr td{
 }
 .border{
     border: 1px dotted red;
+}
+.mensaje-e{
+    color: red;
+}
+.mensaje-s{
+    color: blue;
 }
