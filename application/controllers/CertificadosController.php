@@ -81,13 +81,13 @@ class CertificadosController extends Zend_Controller_Action
                             !empty($filaPersona['segundoNombre'])? $filaPersona['segundoNombre']." ": ''
                         );                                
                 list($anio, $mes, $dia) = explode("-", $filaPersona['fechaIngreso']);
-                $txt = trim($nombreTotal)." identificado con tipo y numero de documento {$filaPersona['tipoDocumento']} {$filaPersona['numeroDocumento']} labora en esta compañia desde {$dia} de ".appMesNombre($mes)." de {$anio} desempeñando el cargo de {$filaPersona['nombreCargo']} devengando una compensación total de ".$val->getNumberText()." PESOS M/CTE (".appFormatoNumero($filaPersona['salario']).").";
+                $txt = trim($nombreTotal)." identificado con tipo y numero de documento {$filaPersona['tipoDocumento']} {$filaPersona['numeroDocumento']} labora en esta compañia desde {$dia} de ".fnMesNombre($mes)." de {$anio} desempeñando el cargo de {$filaPersona['nombreCargo']} devengando una compensación total de ".$val->getNumberText()." PESOS M/CTE (".fnFormatoNumero($filaPersona['salario']).").";
                 $pdf->Write(0, $txt, '', 0, 'J');                
                 $pdf->Ln(20);
                 $pdf->Write(0, "El tipo de contrato es {$filaPersona['nombreTipoContrato']}");
                 $pdf->Ln(20);
                 list($anio, $mes, $dia) = explode("-", date("Y-m-d"));
-                $pdf->Write(0, "La presente se expide a solicitud del interesado el {$dia} de ".appMesNombre($mes)." de {$anio} en la ciudad de bogotá, con destino ".$post['dirigido']);
+                $pdf->Write(0, "La presente se expide a solicitud del interesado el {$dia} de ".fnMesNombre($mes)." de {$anio} en la ciudad de bogotá, con destino ".$post['dirigido']);
                 $pdf->Ln(50);
                 $pdf->Write(0, "Persona que firma");                
                 $pdf->Ln();

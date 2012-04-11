@@ -23,14 +23,14 @@ function desplegarMensajes(){
     var numero  = $('#p_mensajes').attr('data-num');
     if(actual == 'show'){
         $('#p_mensajes')       
-            .text('Ver Mensajes ('+numero+')')
+            .text('Ver Mensajes (' + numero + ')')
             .attr('data-opc', 'hide');
-        $('#dv_mensajes').hide('blind');                    
+        $('#dv_mensajes').hide('blind');                            
     }else{
         $('#p_mensajes')       
-            .text('Ocultar Mensajes ('+numero+')')
-            .attr('data-opc', 'show');
-        $('#dv_mensajes').show('blind');                    
+            .text('Ocultar Mensajes (' + numero + ')')
+            .attr({'data-opc':'show'});
+        $('#dv_mensajes').show('blind');                            
     }
 }        
 

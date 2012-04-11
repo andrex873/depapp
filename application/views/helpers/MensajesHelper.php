@@ -19,7 +19,7 @@ class Zend_View_Helper_MensajesHelper extends Zend_View_Helper_Abstract
                     $htmlSusess .= "<li class='mensaje-s'>{$mensaje['msg']}</li>";
                 }                
             }
-            $html .= "<ul id='mesajes_global'>";
+            $html .= '<ul id="mesajes_global">';
             $html .= $htmlSusess.$htmlError;
             $html .= "</ul>";
         }
