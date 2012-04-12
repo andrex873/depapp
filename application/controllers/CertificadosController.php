@@ -43,13 +43,13 @@ class CertificadosController extends Zend_Controller_Action
                 $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
                 $this->mensajes[] = array('status' => 'S', 'msg' => 'El usuario no existe');
                 $outDto->existe = false;                
-            }else{
-                //$this->mensajes[] = array('status' => 'S', 'msg' => 'El usuario correcto');
+            }else{                 
                 $outDto->existe = true;                
                 $outDto->filaPersona = $filaPersona;                                                
                 
                 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, 'mm', PDF_PAGE_FORMAT, true, 'UTF-8', false);
-                
+                                
+                $pdf->SetProtection(array('modify','copy'));
                 $pdf->SetCreator('Incolsoft');
                 $pdf->SetAuthor('Incolsoft');
                 $pdf->SetTitle('Certificación laboral');
@@ -59,8 +59,7 @@ class CertificadosController extends Zend_Controller_Action
                 //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 001', PDF_HEADER_STRING);
                 $pdf->setPrintHeader(false);
                 $pdf->setPrintFooter(false);
-                
-                //$pdf->SetDefaultMonospacedFont('arial');                
+                                
                 $pdf->SetMargins(40, 40, 40);
                 $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);                
                                                 
@@ -93,17 +92,12 @@ class CertificadosController extends Zend_Controller_Action
                 $pdf->Ln();
                 $pdf->Write(0, "Depto. Recursoso Humanos");                                                
                 $ruta = "tmp/DOCCL.pdf";                
-                $pdf->Output($ruta, 'F');
-                
-                $outDto->pdfPath = $ruta; 
-                                
+                $pdf->Output($ruta, 'F');                
+                $outDto->pdfPath = $ruta;                                 
             }
         }
         $this->view->outDto = $outDto;
     }
 
-
 }
-
-
 

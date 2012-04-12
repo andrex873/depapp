@@ -3,10 +3,7 @@
 class Zend_View_Helper_MensajesHelper extends Zend_View_Helper_Abstract
 {            
 
-    function mensajesHelper() {
-                        
-//        $mensajes = Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger')->getMessages();        
-//        $mensajes = $mensajes? $mensajes: '';
+    function mensajesHelper() {                        
         $html = "";
         $mensajes = $this->view->mensajes;
         if($mensajes){            
@@ -14,17 +11,17 @@ class Zend_View_Helper_MensajesHelper extends Zend_View_Helper_Abstract
             $htmlSusess = "";
             foreach ($mensajes as $key => $mensaje) {
                 if( strtolower($mensaje['status']) == 'e'){
-                    $htmlError .= "<li class='mensaje-e'>{$mensaje['msg']}</li>";
+                    $htmlError .= "<li class='m-error'>{$mensaje['msg']}</li>";
                 }else{
-                    $htmlSusess .= "<li class='mensaje-s'>{$mensaje['msg']}</li>";
+                    $htmlSusess .= "<li class='m-exito'>{$mensaje['msg']}</li>";
                 }                
             }
-            $html .= '<ul id="mesajes_global">';
+            $html .= "<ul id='list_mensajes'>";
             $html .= $htmlSusess.$htmlError;
             $html .= "</ul>";
         }
-        $res = Array('html' => $html, 'count' => count($mensajes) );
-        return $res; 
+        $respuesta = array('html' => $html, 'count' => count($mensajes));
+        return $respuesta; 
     }
 }
 

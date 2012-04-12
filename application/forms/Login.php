@@ -5,8 +5,7 @@ class Application_Form_Login extends Zend_Form
     public function init() {
         
         $this->addElement('text', 'nombreusuario', array(
-            'label' => 'Usuario',
-            'class' => 'una dos tres'
+            'label' => 'Usuario'            
         ));
         $this->addElement('password', 'claveusuario', array(
             'label' => 'Clave'

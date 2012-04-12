@@ -22,7 +22,7 @@ function fnFormatoMoneda($numero) {
  */
 function fnMesNombre($mes) {
     $key = (int)$mes;
-    $meses = array("", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");   
+    $meses = array('', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');   
     return $meses[$key];
 
 }
@@ -33,7 +33,7 @@ function fnMesNombre($mes) {
  */
 function fnDiaNombre($dia){
     $key = (int)$dia;
-    $dias = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado");
+    $dias = array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado');
     return $dias[$key];
 }
 /**

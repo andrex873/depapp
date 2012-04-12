@@ -5,11 +5,9 @@
 html, body{
     height: 100%;
 }
-
 html{        
     background-color: #F5F5F5;
 }
-
 body{    
     font-family: tahoma,arial,verdana,sans-serif;
     font-size: 12px;    
@@ -35,6 +33,16 @@ table tr td{
 #dv_mensajes_container{
     background-color: white;    
 }
+#dv_mensajes{
+    max-height: 11em; 
+    overflow: auto; 
+    width: 100%; 
+    border-bottom: 1px solid #e2e1e1; 
+    display: none;
+}
+#list_mensajes{
+    list-style-type: circle;    
+}
 #dv_contenido{        
     background-color: white;         
     display: block;    
@@ -50,9 +58,6 @@ table tr td{
     border-left: 1px solid #e2e1e1; 
     border-right: 1px solid #e2e1e1; 
     border-bottom: 1px solid #e2e1e1;
-}
-#mesajes_global{
-    list-style-type: circle;    
 }
 .btn-general {
     font-size: 12px;
@@ -98,9 +103,25 @@ table tr td{
 .border{
     border: 1px dotted red;
 }
-.mensaje-e{
-    color: red;
+.m-error{
+    background-color: #FFBABA;
+    color: #D8000C;
+    font-family:Arial;
+    /* font-size:16px; */
+    border: 1px solid #D8000C;
+    margin: 0px 0px;
+    padding:15px 10px 15px 50px;
 }
-.mensaje-s{
-    color: blue;
+.m-exito{    
+    background-color: #DFF2BF;
+    color: #4F8A10;
+    font-family:Arial;
+    /* font-size:16px; */
+    border: 1px solid #4F8A10;
+    margin: 0px 0px;
+    padding:15px 10px 15px 50px;
+
+}
+.m-advertencia{
+    
 }
