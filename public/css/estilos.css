@@ -40,8 +40,9 @@ table tr td{
     border-bottom: 1px solid #e2e1e1; 
     display: none;
 }
-#list_mensajes{
-    list-style-type: circle;    
+li#list_mensajes{
+    list-style-type: circle;
+    padding-left: 20px;
 }
 #dv_contenido{        
     background-color: white;         
@@ -108,20 +109,20 @@ table tr td{
     color: #D8000C;
     font-family:Arial;
     /* font-size:16px; */
-    border: 1px solid #D8000C;
-    margin: 0px 0px;
-    padding:15px 10px 15px 50px;
+    border-bottom: 2px solid #D8000C;
+    margin: 0px 10px;
+    padding:5px 0px 5px 40px;
 }
 .m-exito{    
     background-color: #DFF2BF;
     color: #4F8A10;
     font-family:Arial;
     /* font-size:16px; */
-    border: 1px solid #4F8A10;
-    margin: 0px 0px;
-    padding:15px 10px 15px 50px;
+    border-bottom: 2px solid #4F8A10;
+    margin: 0px 10px;
+    padding:5px 0px 5px 40px;
 
 }
 .m-advertencia{
     
-}
+}-ads

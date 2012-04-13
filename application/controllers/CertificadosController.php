@@ -26,7 +26,7 @@ class CertificadosController extends Zend_Controller_Action
         Zend_Loader::loadClass('ValoresToLetras', APPLICATION_PATH . '/../library/util');        
         
         $outDto = new stdClass();
-        $outDto->existe = false;
+        $outDto->existe = false;        
         if($this->getRequest()->isPost()){
             
             $post = $this->getRequest()->getPost();
@@ -71,7 +71,7 @@ class CertificadosController extends Zend_Controller_Action
                 $pdf->Write(0, "CERTIFICA QUE:", '', 0, 'C');
                 $pdf->Ln();                  
                 $pdf->SetFont('times', '', 12);
-                $val = new ValoresToLetras($filaPersona['salario']);
+                $valorEnLetras = ValoresToLetras::convertirNumero($filaPersona['salario']);
                 
                 $nombreTotal = sprintf("%s%s%s%s", 
                             !empty($filaPersona['primerApellido'])? $filaPersona['primerApellido']." ": '',
@@ -80,7 +80,7 @@ class CertificadosController extends Zend_Controller_Action
                             !empty($filaPersona['segundoNombre'])? $filaPersona['segundoNombre']." ": ''
                         );                                
                 list($anio, $mes, $dia) = explode("-", $filaPersona['fechaIngreso']);
-                $txt = trim($nombreTotal)." identificado con tipo y numero de documento {$filaPersona['tipoDocumento']} {$filaPersona['numeroDocumento']} labora en esta compañia desde {$dia} de ".fnMesNombre($mes)." de {$anio} desempeñando el cargo de {$filaPersona['nombreCargo']} devengando una compensación total de ".$val->getNumberText()." PESOS M/CTE (".fnFormatoNumero($filaPersona['salario']).").";
+                $txt = trim($nombreTotal)." identificado con tipo y numero de documento {$filaPersona['tipoDocumento']} {$filaPersona['numeroDocumento']} labora en esta compañia desde {$dia} de ".fnMesNombre($mes)." de {$anio} desempeñando el cargo de {$filaPersona['nombreCargo']} devengando una compensación total de ".$valorEnLetras." PESOS M/CTE (".fnFormatoNumero($filaPersona['salario']).").";
                 $pdf->Write(0, $txt, '', 0, 'J');                
                 $pdf->Ln(20);
                 $pdf->Write(0, "El tipo de contrato es {$filaPersona['nombreTipoContrato']}");
