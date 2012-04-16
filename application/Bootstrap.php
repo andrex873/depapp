@@ -41,5 +41,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $var = setlocale(LC_ALL, "es_ES.ISO_8859-1");
         date_default_timezone_set('America/Bogota');
     }
+    
+    protected function _initCargarConfiguracion()
+    {           
+        $configuracionPersonal = new Zend_Config_Ini(APPLICATION_PATH . "/configs/config-custom.ini", 'general');
+        Zend_Registry::set("configuracionPersonal", $configuracionPersonal);                            
+    }
 
 }

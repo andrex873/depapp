@@ -16,39 +16,47 @@ class IndexController extends Zend_Controller_Action
     }
 
     public function loginAction()
-    {
-        $form = new Application_Form_Login();
-        $this->view->form = $form;
-        
+    {                
         if(Zend_Auth::getInstance()->hasIdentity()){
             $this->_redirect("/index/inicio");
         }
-        if ($this->getRequest()->isPost()) {
-            $post = $this->getRequest()->getPost();            
-            $auAdapter = new Zend_Auth_Adapter_DbTable();
-            $auAdapter->setTableName('t_usuarios')
-                    ->setIdentityColumn('nombreUsuario')
-                    ->setCredentialColumn('clave');
+        $this->view->error = false;
+        $form = new Application_Form_Login();                
+        if ($this->getRequest()->isPost()) {                        
+            $post = $this->getRequest()->getPost(); 
+            $val = $form->isValid($post);
+            if($val){
+                $auAdapter = new Zend_Auth_Adapter_DbTable();
+                $auAdapter->setTableName('t_usuarios')
+                        ->setIdentityColumn('nombreUsuario')
+                        ->setCredentialColumn('clave');
 
-            $auAdapter->setIdentity($post['nombreusuario'])
-                    ->setCredential(md5($post['claveusuario']));
-            $auInstance = Zend_Auth::getInstance();
-            $resultado = $auInstance->authenticate($auAdapter);                        
-            
-            if ($resultado->isValid()) {
-                $usuario = $auAdapter->getResultRowObject(null, 'clave');
-                
-                $tPersona = new Application_Model_Personas();
-                $persona = $tPersona->fetchRow("idPersona = '".$usuario->idPersona."'");                
-                
-                $this->session->usuario = $usuario;                 
-                $this->session->persona = $persona;                                                 
-                
-                $this->_redirect("/index/inicio");
-            } else {
-                //$this->_redirect("/index/index");
-            }
-        }        
+                $auAdapter->setIdentity($post['nombreusuario'])
+                        ->setCredential(md5($post['claveusuario']));
+                $auInstance = Zend_Auth::getInstance();
+                $resultado = $auInstance->authenticate($auAdapter);                        
+
+                if ($resultado->isValid()) {
+                    $usuario = $auAdapter->getResultRowObject(null, 'clave');
+
+                    $tPersona = new Application_Model_Personas();
+                    $persona = $tPersona->fetchRow("idPersona = '".$usuario->idPersona."'");                
+
+                    $this->session->usuario = $usuario;                 
+                    $this->session->persona = $persona;                                                 
+
+                    $this->_redirect("/index/inicio");
+                } else {
+                    $this->view->error = true;
+                    $this->view->mensaje = "Error en el nombre de Usuario o Clave, por favor verifique.";                
+                }
+            }else{            
+                $this->view->error = true;
+                $this->view->mensaje = "Error en los datos de ingreso, los campos no pueden estar vacios.";                                                
+                $this->view->zf = $form->getMessages();
+            }        
+        }
+        $this->view->form = $form;
     }
 
     public function logoutAction()

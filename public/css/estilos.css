@@ -40,10 +40,6 @@ table tr td{
     border-bottom: 1px solid #e2e1e1; 
     display: none;
 }
-li#list_mensajes{
-    list-style-type: circle;
-    padding-left: 20px;
-}
 #dv_contenido{        
     background-color: white;         
     display: block;    
@@ -104,25 +100,66 @@ li#list_mensajes{
 .border{
     border: 1px dotted red;
 }
+.error_login{
+    background-color: #FFFFE0;
+    border: 1px solid #E6DB55;    
+    padding: 5px;
+    border-radius: 5px;
+    text-align: justify;
+}
+/* [Inicio] Estilos para los mensajes */
+ul#list_mensajes{    
+    background-color: #FFFFE0;
+    border: 1px solid #E6DB55;
+    margin: 7px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: justify;
+}
 .m-error{
-    background-color: #FFBABA;
+    
+    background: url('/img/error.png') no-repeat 0 center;
+    padding: 3px 20px; 
+    color: #D8000C;
+    margin-left: 5px;
+/*  background-color: #FFBABA;
     color: #D8000C;
     font-family:Arial;
-    /* font-size:16px; */
+    font-size:16px; 
     border-bottom: 2px solid #D8000C;
     margin: 0px 10px;
     padding:5px 0px 5px 40px;
+*/
 }
-.m-exito{    
-    background-color: #DFF2BF;
+.m-exito{        
+    background: url('/img/ok.png') no-repeat 0 center;
+    padding: 3px 20px; 
+    color: #4F8A10;
+    margin-left: 5px;
+/*  background-color: #DFF2BF;
     color: #4F8A10;
     font-family:Arial;
-    /* font-size:16px; */
+    font-size:16px; 
     border-bottom: 2px solid #4F8A10;
     margin: 0px 10px;
     padding:5px 0px 5px 40px;
-
+*/
 }
-.m-advertencia{
-    
-}-ads
+/* [FIN] Estilos para los mensajes */
+/* [Inicio] Estilos para los filtros de consulta */
+.formLabel{
+        display: block;
+        padding: 3px;
+        margin: 4px 2px 3px 0;        
+        background-color: #e2e1e1;
+    }
+    .formInput{
+        padding: 4px;        
+        border: 1px solid #4D90FE; 
+        border-radius: 3px;
+    }
+    .formSelect{
+        padding: 4px;
+        border: 1px solid #4D90FE;
+    } 
+/* [FIN] Estilos para los filtros de consulta */

@@ -22,6 +22,11 @@ class CertificadosController extends Zend_Controller_Action
 
     public function laboralAction()
     {        
+        
+        
+        
+        
+        
         Zend_Loader::loadClass('TCPDF', APPLICATION_PATH . '/../library/tcpdf');
         Zend_Loader::loadClass('ValoresToLetras', APPLICATION_PATH . '/../library/util');        
         
@@ -32,20 +37,12 @@ class CertificadosController extends Zend_Controller_Action
             $post = $this->getRequest()->getPost();
             $t_personas = new Application_Model_Personas();
             $filaPersona = $t_personas->getCertificacionLaboralInformacion($post['tipoDocumento'], $post['numeroDocumento']);                                                            
-            if($filaPersona == false){
-                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
-                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
-                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
-                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
-                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
-                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
-                $this->mensajes[] = array('status' => 'S', 'msg' => 'El usuario no existe');
-                $this->mensajes[] = array('status' => 'E', 'msg' => 'El usuario no existe');
-                $this->mensajes[] = array('status' => 'S', 'msg' => 'El usuario no existe');
+            if($filaPersona == false){                
+                $this->mensajes[] = array('status' => 'S', 'msg' => "El usuario no existe, verifique el documento <b>{$post['tipoDocumento']} {$post['numeroDocumento']}</b> ");
                 $outDto->existe = false;                
             }else{                 
                 $outDto->existe = true;                
-                $outDto->filaPersona = $filaPersona;                                                
+                //$outDto->filaPersona = $filaPersona;                                                
                 
                 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, 'mm', PDF_PAGE_FORMAT, true, 'UTF-8', false);
                                 
@@ -55,8 +52,7 @@ class CertificadosController extends Zend_Controller_Action
                 $pdf->SetTitle('Certificación laboral');
                 $pdf->SetSubject('Certificación laboral');
                 $pdf->SetKeywords('Incolsoft, PDF, certificación');
-                
-                //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 001', PDF_HEADER_STRING);
+                                
                 $pdf->setPrintHeader(false);
                 $pdf->setPrintFooter(false);
                                 
@@ -91,7 +87,7 @@ class CertificadosController extends Zend_Controller_Action
                 $pdf->Write(0, "Persona que firma");                
                 $pdf->Ln();
                 $pdf->Write(0, "Depto. Recursoso Humanos");                                                
-                $ruta = "tmp/DOCCL.pdf";                
+                $ruta = "tmp/RRHHCL001.pdf";                
                 $pdf->Output($ruta, 'F');                
                 $outDto->pdfPath = $ruta;                                 
             }

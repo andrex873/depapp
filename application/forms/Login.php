@@ -3,25 +3,37 @@ class Application_Form_Login extends Zend_Form
 {
     
     public function init() {
-                
-        $this->clearDecorators();
-//        $username = new Zend_Form_Element_Text('username');
-//        $username
-//            ->setLabel('Username:')
-//            ->addDecorator('Label', array('class' => 'req-username'))
-//            ->addDecorator('Errors', array('class' => 'err-username'));
 
+        $this->setMethod('post')
+             ->setAction('/index/login');        
         
+        $nombreusuario = new Zend_Form_Element_Text('nombreusuario');
+        $nombreusuario
+            ->setLabel('Usuario')
+            ->setRequired()                
+            ->setAttribs(array(
+                'placeholder' => 'Nombre de usuario',            
+                'class' => 'frm_input',
+                'required' => ''
+                ));    
+        $this->addElement($nombreusuario);
         
-        $this->addElement('text', 'nombreusuario', array(
-            'label' => 'Usuario',
-            'class' => 'frm_label'
-        ));
-        $this->addElement('password', 'claveusuario', array(
-            'label' => 'Clave'
-        ));
-        $this->addElement('submit', 'enviar', array(
-            'label' => 'Ingrasar'            
-        ));
+        $claveusuario = new Zend_Form_Element_Password('claveusuario');
+        $claveusuario
+            ->setLabel('Clave')
+            ->setRequired()                
+            ->setAttribs(array(                
+                'class' => 'frm_input',                
+                'required' => ''                
+                ));    
+        $this->addElement($claveusuario);
+        
+        $enviar = new Zend_Form_Element_Submit('enviar');
+        $enviar
+            ->setLabel('Ingresar')            
+            ->setAttribs(array(                
+                'class' => 'btn-general' 
+                ));    
+        $this->addElement($enviar);                                         
     }
 }

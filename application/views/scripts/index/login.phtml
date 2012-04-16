@@ -1,18 +1,27 @@
+<?php $form = $this->form ?>
 <div class="dv_frm">
-    <form method="post" name="frm_log" action="/index/login" id="frm_log">        
+    <?php if($this->error){ ?>
+    <div class="error_login">
+        <div class="m-error"><?php echo $this->mensaje ?></div>
+        <?php print_r($this->zf) ?>
+    </div>    
+    <?php } ?>
+    <form method="<?php echo $form->getMethod() ?>" name="frm_log" action="<?php echo $form->getAction() ?>" id="frm_log">        
         <p>
             <label for="nombreusuario" class="frm_label">Usuario</label>
             </br>
-            <input type="text" name="nombreusuario" value="" id="nombreusuario" placeholder="Nombre de usuario" required class="frm_input" />
+            <!-- <input type="text" name="nombreusuario" value="" id="nombreusuario" placeholder="Nombre de usuario" required class="frm_input" /> -->
+            <?php echo $form->getElement('nombreusuario')->renderViewHelper() ?>
         </p>
         <p>
             <label for="claveusuario" class="frm_label">Clave</label>
             </br>
-            <input type="password" name="claveusuario" value="" id="claveusuario" class="frm_input" required />
+            <!-- <input type="password" name="claveusuario" value="" id="claveusuario" class="frm_input" required /> -->
+            <?php echo $form->getElement('claveusuario')->renderViewHelper() ?>
         </p>
         <p class="right">
-            <input type="submit" name="enviar" value="Ingresar" class="btn-general" />
+            <!-- <input type="submit" name="enviar" value="Ingresar" class="btn-general" /> -->
+            <?php echo $form->getElement('enviar')->renderViewHelper() ?>
         </p>                                           
     </form>
 </div>
-<?php echo $this->form ?>
