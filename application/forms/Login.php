@@ -32,7 +32,7 @@ class Application_Form_Login extends Zend_Form
         $enviar
             ->setLabel('Ingresar')            
             ->setAttribs(array(                
-                'class' => 'btn-general' 
+                'class' => 'btnGeneral' 
                 ));    
         $this->addElement($enviar);                                         
     }

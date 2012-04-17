@@ -51,3 +51,44 @@ function fnObject2array($object){
     }
     return $dato;
 }
+/**
+ * 
+ * @param type $texto
+ * @param type $key
+ * @return type 
+ */
+function fnEncriptar($texto, $key){
+    $result = '';
+    for($index = 0; $index < strlen($texto); $index++) {
+        $charT  = substr($texto, $index, 1);
+        $charK  = substr($key, ($index % strlen($key))-1, 1);
+        $charT  = chr(ord($charT)+ord($charK));
+        $result.= $charT;
+    }
+    $result = str_replace('/', '_', str_replace('+', '-', base64_encode($result)));
+    return $result;
+}
+/**
+ * 
+ * @param type $texto
+ * @param type $key
+ * @return type 
+ */
+function fnDesencriptar($texto, $key) {
+    $result = '';
+    $texto = base64_decode(str_replace('-', '+', str_replace('_', '/', $texto)));
+    for($index = 0; $index < strlen($texto); $index++) {
+        $charT  = substr($texto, $index, 1);
+        $cahrK  = substr($key, ($index % strlen($key))-1, 1);
+        $charT  = chr(ord($charT)-ord($cahrK));
+        $result.= $charT;
+    } 
+    return $result;
+}
+function fnTiposIdentificacion() {
+    return array(
+        'CC' => 'CC',
+        'TI' => 'TI',
+        'CE' => 'CE'
+        );
+}

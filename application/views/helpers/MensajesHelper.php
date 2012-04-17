@@ -11,9 +11,9 @@ class Zend_View_Helper_MensajesHelper extends Zend_View_Helper_Abstract
             $htmlSusess = "";
             foreach ($mensajes as $key => $mensaje) {
                 if( strtolower($mensaje['status']) == 'e'){
-                    $htmlError .= "<li class='m-error'>{$mensaje['msg']}</li>";
+                    $htmlError .= "<li class='mError'>{$mensaje['msg']}</li>";
                 }else{
-                    $htmlSusess .= "<li class='m-exito'>{$mensaje['msg']}</li>";
+                    $htmlSusess .= "<li class='mExito'>{$mensaje['msg']}</li>";
                 }                
             }
             $html .= "<ul id='list_mensajes'>";
