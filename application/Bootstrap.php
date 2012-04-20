@@ -43,6 +43,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         
         date_default_timezone_set($globalConf->TIMEZONE);
         setlocale(LC_ALL, $globalConf->LOCALE);        
+        //setlocale(LC_ALL, "es_ES@euro", "es_ES.UTF8", "esp");        
     }
 
 }

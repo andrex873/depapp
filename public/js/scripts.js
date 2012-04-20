@@ -7,6 +7,16 @@ $(document).on('ready', onReadyCallback );
  */
 function onReadyCallback(){   
     $('#p_mensajes').on('click', desplegarMensajes); 
+    
+    var header_alto = $('header').height();
+    var footer_alto = $('footer').height();            
+    var menu_alto = $('#nav_menu').height();            
+    var ventana_alto = $(window).height();
+    var alto = (ventana_alto-header_alto-footer_alto-menu_alto);
+    //alert(alto);
+    $('#dv_contenido').css('minHeight', alto+'px');
+    
+    
 }
 /**
  * Funcion para redireccionar peticiones mediante documento.location.    

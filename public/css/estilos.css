@@ -41,10 +41,16 @@ header{
 footer{
     background-color: #3c3434;
     border-top: 2px solid silver;
-    height: 50px;
+    height: 100px;
     color: #e2e1e1;
     margin-top: 5px;
     padding-right: 20px;    
+    padding: 15px 15px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    text-shadow: 2px 1px 1px silver;
 }
 /* [Fin] Estilos del footer */
 
