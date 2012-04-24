@@ -80,7 +80,7 @@ table tr td{
     overflow: auto; 
     width: 100%; 
     border-bottom: 1px solid #e2e1e1; 
-    display: none;
+    display: block;
 }
 .btnGeneral {
     font-size: 12px;

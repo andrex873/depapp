@@ -40,7 +40,7 @@ class CertificadosController extends Zend_Controller_Action
                 }else{                 
                     $outDto->existe = true;                                    
 
-                    $pdf = new TCPDF(PDF_PAGE_ORIENTATION, 'mm', PDF_PAGE_FORMAT, true, 'UTF-8', false);
+                    $pdf = new TCPDF(PDF_PAGE_ORIENTATION, 'mm', 'LETTER', true, 'UTF-8', false);
 
                     $pdf->SetProtection(array('modify','copy'));
                     $pdf->SetCreator('Incolsoft');
@@ -57,12 +57,12 @@ class CertificadosController extends Zend_Controller_Action
 
                     $pdf->AddPage();                
                     $pdf->Image("img/incolsoft_logo_1.png");                
-                    $pdf->Ln(40);
+                    //$pdf->Ln(40);
 
-                    $pdf->SetFont('times', 'B', 20);
-                    $pdf->Write(0, "CERTIFICA QUE:", '', 0, 'C');
-                    $pdf->Ln();                  
-                    $pdf->SetFont('times', '', 12);
+                    //$pdf->SetFont('times', 'B', 20);
+                    //$pdf->Write(0, "CERTIFICA QUE:", '', 0, 'C');
+                    //$pdf->Ln(20);                  
+                    $pdf->SetFont('times', '', 13);
                     $valorEnLetras = ValoresToLetras::convertirNumero($filaPersona['salario']);
 
                     $nombreTotal = sprintf("%s%s%s%s", 

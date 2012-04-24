@@ -43,8 +43,8 @@
                     <?php $objMensajes = $this->mensajesHelper() ?>                    
                     <?php echo $objMensajes['html'] ?>                    
                 </div>
-                <p id="p_mensajes" data-opc="hide" data-num="<?php echo $objMensajes['count'] ?>" class="center" style="width: 180px; padding: 5px; background-color: #e2e1e1; margin: 0 auto; border-radius: 0 0 5px 5px; cursor: pointer;">
-                    Ver mensajes (<?php echo $objMensajes['count'] ?>)
+                <p id="p_mensajes" data-opc="show" data-num="<?php echo $objMensajes['count'] ?>" class="center" style="width: 180px; padding: 5px; background-color: #e2e1e1; margin: 0 auto; border-radius: 0 0 5px 5px; cursor: pointer;">
+                    Ocultar Mensajes (<?php echo $objMensajes['count'] ?>)
                 </p>
             </div>
             <div id="dv_contenido" class="">             
