@@ -26,15 +26,18 @@
         <!-- [fin] Archivos javascript -->
     </head>
     <body>        
-        <header>            
-            <img src="" alt="" />
-            <p>Soy usuario logueado</p>
-            <p class="right">
-                <?php echo $this->nombreUsuarioHelper('NOMBRE_HEADER') ?>
-            </p>
-            <p class="right">
-                <a href="/index/logout">Salir</a>
-            </p>
+        <header>
+            <div id="logo">
+                <img src="/img/logo_incolsoft_transparente.png" alt="Incolsoft" />
+            </div>            
+            <div id="contenedor_usuario">
+                <span>
+                    <?php echo $this->nombreUsuarioHelper('NOMBRE_HEADER') ?>
+                </span> | 
+                <span>
+                    <a href="/index/logout">Salir</a>
+                </span>                
+            </div>
         </header>            
         <div id="dv_main">
             <nav id="nav_menu"></nav>

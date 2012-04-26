@@ -14,9 +14,34 @@ body{
 }
 /* [Inicio] Header */
 header{
+    color: #4183C4;
+    font-weight: bold;
+    position: relative;
     height: 8em; 
     display: block; 
     border-bottom: 3px solid #357AE8;
+    padding: 8px 10px;    
+}
+header div#logo{
+    float: left;
+}
+header div#contenedor_usuario{
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    margin-right: 10px; 
+    padding: 8px;
+}
+header div#contenedor_usuario a{
+    text-decoration: none; 
+    color: #4183C4;     
+    padding: 4px 7px;    
+}
+header div#contenedor_usuario a:hover{
+    color: #FFFFFF;    
+    border: 0px solid #4183C4;        
+    background-color: #3178be;
+    border-radius: 5px;
 }
 /* [Fin] Header */
 /* [Inicio] Contenido principal */
@@ -62,7 +87,7 @@ fieldset{
 legend{
     margin: 0px 5px 5px 5px;
     padding: 0 5px 0 20px;
-    background: url('/img/magnifier.png') no-repeat 2px center; 
+    background: url('/img/lupa.png') no-repeat 2px center; 
 }
 table{
     width: 100%;
