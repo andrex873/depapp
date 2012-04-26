@@ -49,19 +49,19 @@ class CertificadosController extends Zend_Controller_Action
                     $pdf->SetSubject('Certificación laboral');
                     $pdf->SetKeywords('Incolsoft, PDF, certificación');
 
-                    $pdf->setPrintHeader(false);
+                    $pdf->SetHeaderData('logo_incolsoft_transparente.png', 70, '', '');
+                    
+                    $pdf->setPrintHeader(true);
                     $pdf->setPrintFooter(false);
 
-                    $pdf->SetMargins(40, 40, 40);
-                    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);                
+                    $pdf->SetMargins(35, 40);
+                    $pdf->SetAutoPageBreak(TRUE, 35);                
 
-                    $pdf->AddPage();                
-                    $pdf->Image("img/incolsoft_logo_1.png");                
-                    //$pdf->Ln(40);
+                    $pdf->AddPage();                                    
 
-                    //$pdf->SetFont('times', 'B', 20);
-                    //$pdf->Write(0, "CERTIFICA QUE:", '', 0, 'C');
-                    //$pdf->Ln(20);                  
+                    $pdf->SetFont('times', 'B', 20);
+                    $pdf->Write(0, "CERTIFICA QUE:", '', 0, 'C');
+                    $pdf->Ln(20);                  
                     $pdf->SetFont('times', '', 13);
                     $valorEnLetras = ValoresToLetras::convertirNumero($filaPersona['salario']);
 
@@ -73,14 +73,15 @@ class CertificadosController extends Zend_Controller_Action
                             );                                
                     list($anio, $mes, $dia) = explode("-", $filaPersona['fechaIngreso']);
                     $txt = trim($nombreTotal)." identificado con tipo y numero de documento {$filaPersona['tipoDocumento']} {$filaPersona['numeroDocumento']} labora en esta compañia desde {$dia} de ".fnMesNombre($mes)." de {$anio} desempeñando el cargo de {$filaPersona['nombreCargo']} devengando una compensación total de ".$valorEnLetras." PESOS M/CTE (".fnFormatoNumero($filaPersona['salario']).").";
-                    $pdf->Write(0, $txt, '', 0, 'J');                
+                    $pdf->Write(0, $txt, '', false, 'J', false, 1);                
                     $pdf->Ln(20);
                     $pdf->Write(0, "El tipo de contrato es {$filaPersona['nombreTipoContrato']}");
                     $pdf->Ln(20);
                     list($anio, $mes, $dia) = explode("-", date("Y-m-d"));
                     $pdf->Write(0, "La presente se expide a solicitud del interesado el {$dia} de ".fnMesNombre($mes)." de {$anio} en la ciudad de bogotá, con destino ".$post['dirigido']);
-                    $pdf->Ln(50);
-                    $pdf->Write(0, "Persona que firma");                
+                    $pdf->Ln(60);
+                    //$pdf->Image('img/IMAGEN_FIRMA_Y_SELLO.png'); 
+                    $pdf->Write(0, "Persona que firma"); 
                     $pdf->Ln();
                     $pdf->Write(0, "Depto. Recursoso Humanos");                                                
                     $ruta = "tmp/RRHHCL001.pdf";                
