@@ -8,5 +8,17 @@
 
 #contenedor_filtros{
     width: 50em;
-    margin: 0 auto;
+    margin: 0 auto;    
 } 
+#contenedor_pdf{
+    border: 1px solid #C5D5DD;
+    border-radius: 5px;
+    margin: 5px 0;    
+    background-color: #E6F1F6;
+}
+#contenedor_pdf p{
+    padding: 8px;
+    font-size: 13px;
+    font-weight: bold;    
+    color: #4E575B;
+}
