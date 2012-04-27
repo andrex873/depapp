@@ -17,5 +17,11 @@ class Application_Model_Menu extends Zend_Db_Table_Abstract
        $dMenu = $db->fetchAll($sql);         
        return $dMenu;                 
     }
+    
+    public function getMenuByIdPadre($idPadre){                
+        $where = is_array($idPadre) ? "idPadre IN (".implode(', ', $idPadre).")": "idPadre = '".$idPadre."'";
+        $dMenu = $this->fetchAll($where);
+        return $dMenu; 
+    }
 }
 

@@ -68,7 +68,9 @@ class IndexController extends Zend_Controller_Action
 
     public function inicioAction()
     {
-        
+        $t_menu = new Application_Model_Menu();
+        $dMenu = $t_menu->getMenuByIdPadre(0)->toArray();
+        $this->view->dMenu = $dMenu;        
     }
 }
 

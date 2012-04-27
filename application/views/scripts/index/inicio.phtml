@@ -1,41 +1,24 @@
-<div>    
-    <table>
-        <tr>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-            <td><?php echo rand(1000, 900000) ?></td>
-        </tr>                  
+<style>
+    
+</style>
+<div id="inicio_main" class="">    
+    <table border="0">
+        <tr> 
+            <?php foreach ($this->dMenu as $key => $menu) {?>
+            <td align="center">
+                <div id="inicio_item">
+                    <img alt="" src="/img/folder_open.png">
+                    <p id="titulo">
+                        <?php echo $menu['nombre'] ?>
+                    </p>
+                    <p id="descripcion">
+                        <?php echo $menu['descripcion'] ?>
+                    </p>
+                </div>
+            </td>
+            <?php echo ( ($key+1) % 4) == 0 ? "</tr><tr>": "" ?>
+            <?php } ?>
+        </tr>
     </table>
 </div>
-<hr/>
 
