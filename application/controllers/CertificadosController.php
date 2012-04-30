@@ -61,7 +61,7 @@ class CertificadosController extends Zend_Controller_Action
 
                     $pdf->SetFont('times', 'B', 20);
                     $pdf->Write(0, "CERTIFICA QUE:", '', 0, 'C');
-                    $pdf->Ln(20);                  
+                    $pdf->Ln(30);                  
                     $pdf->SetFont('times', '', 13);
                     $valorEnLetras = ValoresToLetras::convertirNumero($filaPersona['salario']);
 
@@ -76,11 +76,13 @@ class CertificadosController extends Zend_Controller_Action
                     $pdf->Write(0, $txt, '', false, 'J', false, 1);                
                     $pdf->Ln(20);
                     $pdf->Write(0, "El tipo de contrato es {$filaPersona['nombreTipoContrato']}");
-                    $pdf->Ln(20);
+                    $pdf->Ln(30);
                     list($anio, $mes, $dia) = explode("-", date("Y-m-d"));
                     $pdf->Write(0, "La presente se expide a solicitud del interesado el {$dia} de ".fnMesNombre($mes)." de {$anio} en la ciudad de bogotá, con destino ".$post['dirigido']);
-                    $pdf->Ln(60);
+                    $pdf->Ln(50);
                     //$pdf->Image('img/IMAGEN_FIRMA_Y_SELLO.png'); 
+                    $pdf->Image('img/firma.png'); 
+                    $pdf->Ln(20);
                     $pdf->Write(0, "Persona que firma"); 
                     $pdf->Ln();
                     $pdf->Write(0, "Depto. Recursoso Humanos");                                                
