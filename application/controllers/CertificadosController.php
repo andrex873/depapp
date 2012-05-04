@@ -2,7 +2,11 @@
 
 class CertificadosController extends Zend_Controller_Action
 {
-
+    
+    /**
+     * Mensajes del sistema
+     * @var Array 
+     */
     private $mensajes    = array();
 
     public function postDispatch() {
@@ -11,13 +15,11 @@ class CertificadosController extends Zend_Controller_Action
     }
 
     public function init()
-    {
-        //$this->msg = $this->_helper->FlashMessenger; 
+    {        
     }
 
     public function indexAction()
     {
-        // action body
     }
 
     public function laboralAction()
@@ -28,8 +30,7 @@ class CertificadosController extends Zend_Controller_Action
         $outDto = new stdClass();
         $outDto->existe = false;        
         $form = new Application_Form_CertificadosLaboralFiltro();
-        if($this->getRequest()->isPost()){
-            
+        if($this->getRequest()->isPost()){             
             $post = $this->getRequest()->getPost();
             if($form->isValid($post)){
                 $t_personas = new Application_Model_Personas();
@@ -77,10 +78,9 @@ class CertificadosController extends Zend_Controller_Action
                     $pdf->Ln(20);
                     $pdf->Write(0, "El tipo de contrato es {$filaPersona['nombreTipoContrato']}");
                     $pdf->Ln(30);
-                    list($anio, $mes, $dia) = explode("-", date("Y-m-d"));
+                    list($anio, $mes, $dia) = explode("-", date('Y-m-d'));
                     $pdf->Write(0, "La presente se expide a solicitud del interesado el {$dia} de ".fnMesNombre($mes)." de {$anio} en la ciudad de bogotá, con destino ".$post['dirigido']);
-                    $pdf->Ln(50);
-                    //$pdf->Image('img/IMAGEN_FIRMA_Y_SELLO.png'); 
+                    $pdf->Ln(50);                    
                     $pdf->Image('img/firma.png'); 
                     $pdf->Ln(20);
                     $pdf->Write(0, "Persona que firma"); 
@@ -90,7 +90,7 @@ class CertificadosController extends Zend_Controller_Action
                     $pdf->Output($ruta, 'F');                
                     $outDto->pdfPath = $ruta;                                 
                 }
-            }else{
+            } else {
                 $this->mensajes[] = array('status' => 'E', 'msg' => "Error en los datos ingresados.");
                 $outDto->existe = false;
             }
