@@ -70,7 +70,7 @@ class IndexController extends Zend_Controller_Action
     {
         $t_menu = new Application_Model_Menu();
         $dMenu = $t_menu->getMenuByIdPadre(0)->toArray();
-        $this->view->dMenu = $dMenu;        
+        $this->view->dMenu = $dMenu;                         
     }
 }
 

@@ -12,9 +12,7 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="login"/>
           <actionMethod actionName="logout"/>
-          <actionMethod actionName="inicio"/>
-          <actionMethod actionName="getMenuAgrupado"/>
-          <actionMethod actionName="laboral"/>
+          <actionMethod actionName="inicio"/>                    
         </controllerFile>
         <controllerFile controllerName="Error"/>
         <controllerFile controllerName="Menu">
@@ -50,16 +48,10 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Menu">
             <viewScriptFile forActionName="index"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="Index">
-            <viewScriptFile forActionName="getMenuAgrupado"/>
-          </viewControllerScriptsDirectory>
+          </viewControllerScriptsDirectory>          
           <viewControllerScriptsDirectory forControllerName="Certificados">
             <viewScriptFile forActionName="index"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="Index">
-            <viewScriptFile forActionName="laboral"/>
-          </viewControllerScriptsDirectory>
+          </viewControllerScriptsDirectory>          
           <viewControllerScriptsDirectory forControllerName="Certificados">
             <viewScriptFile forActionName="laboral"/>
           </viewControllerScriptsDirectory>

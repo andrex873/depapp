@@ -1,18 +1,7 @@
 <?php
 
 class CertificadosController extends Zend_Controller_Action
-{
-    
-    /**
-     * Mensajes del sistema
-     * @var Array 
-     */
-    private $mensajes    = array();
-
-    public function postDispatch() {
-        $this->view->mensajes = $this->mensajes;
-        parent::postDispatch();
-    }
+{        
 
     public function init()
     {        
@@ -36,7 +25,7 @@ class CertificadosController extends Zend_Controller_Action
                 $t_personas = new Application_Model_Personas();
                 $filaPersona = $t_personas->getCertificacionLaboralInformacion($post['tipoDocumento'], $post['numeroDocumento']);                                                            
                 if($filaPersona == false){                
-                    $this->mensajes[] = array('status' => 'E', 'msg' => "El usuario no existe, verifique los datos ingresados [<b>{$post['tipoDocumento']} {$post['numeroDocumento']}</b>] ");
+                    $this->_helper->mensajes('E', "El usuario no existe, verifique los datos ingresados [<b>{$post['tipoDocumento']} {$post['numeroDocumento']}</b>] ");
                     $outDto->existe = false;                
                 }else{                 
                     $outDto->existe = true;                                    
@@ -91,7 +80,7 @@ class CertificadosController extends Zend_Controller_Action
                     $outDto->pdfPath = $ruta;                                 
                 }
             } else {
-                $this->mensajes[] = array('status' => 'E', 'msg' => "Error en los datos ingresados.");
+                $this->_helper->mensajes('E', "Error en los datos ingresados.");
                 $outDto->existe = false;
             }
         }

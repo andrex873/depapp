@@ -5,7 +5,10 @@ class Zend_View_Helper_MensajesHelper extends Zend_View_Helper_Abstract
 
     function mensajesHelper() {                        
         $html = "";
-        $mensajes = $this->view->mensajes;
+        $obj = Zend_Controller_Action_HelperBroker::getStaticHelper('mensajes');        
+        $mensajes = $obj->getMensajes();
+        
+        //$mensajes = $this->view->mensajes;
         if($mensajes){            
             $htmlError = "";
             $htmlSusess = "";
