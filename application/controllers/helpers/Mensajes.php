@@ -10,10 +10,10 @@ class Zend_Controller_Action_Helper_Mensajes extends Zend_Controller_Action_Help
         
     function direct($tipo, $mensaje)
     {        
-        return $this->setMensaje($tipo, $mensaje);
+        return $this->addMensaje($tipo, $mensaje);
     }
     
-    public function setMensaje($tipo, $mensaje) {
+    public function addMensaje($tipo, $mensaje) {
         $session = new Zend_Session_Namespace(NS_SESSION);        
         $session->MENSAJES[] = array(
             'status' => $tipo,
