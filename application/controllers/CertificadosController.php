@@ -4,7 +4,10 @@ class CertificadosController extends Zend_Controller_Action
 {        
 
     public function init()
-    {        
+    {
+        if(!Zend_Auth::getInstance()->hasIdentity()){
+            $this->_redirect("/");
+        }
     }
 
     public function indexAction()

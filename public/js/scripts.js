@@ -10,8 +10,8 @@ function onReadyCallback(){
     
     var header_alto = $('header').height();
     var footer_alto = $('footer').height();            
-    var menu_alto = $('#nav_menu').height();            
-    var ventana_alto = $(window).height();
+    var menu_alto = 20;//$('#nav_menu').height();            
+    var ventana_alto = $('body').height();
     var alto = (ventana_alto-header_alto-footer_alto-menu_alto);
     //alert(alto);
     $('#dv_contenido').css('minHeight', alto+'px');

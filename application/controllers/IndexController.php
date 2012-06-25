@@ -63,11 +63,14 @@ class IndexController extends Zend_Controller_Action
     {
         Zend_Auth::getInstance()->clearIdentity();
         Zend_Session::destroy(true);
-        return $this->_redirect('/index/login');                
+        return $this->_redirect('/'); 
     }
 
     public function inicioAction()
     {
+        if(!Zend_Auth::getInstance()->hasIdentity()){
+            return $this->_redirect('/'); 
+        }
         $t_menu = new Application_Model_Menu();
         $dMenu = $t_menu->getMenuByIdPadre(0)->toArray();
         $this->view->dMenu = $dMenu;                         
