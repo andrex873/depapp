@@ -1,4 +1,6 @@
-
+/**
+ * Menu de navegacion principal.
+ */
 $(document).on('ready', function(){
     
     var gMenu = null;    

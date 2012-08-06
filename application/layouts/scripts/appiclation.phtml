@@ -32,13 +32,21 @@
             <div id="logo">
                 <img src="/img/logo_incolsoft_transparente.png" alt="Incolsoft" />
             </div>            
-            <div id="contenedor_usuario">
-                <span>
-                    <?php echo $this->nombreUsuarioHelper('NOMBRE_HEADER') ?>
-                </span> | 
-                <span>
-                    <a href="/index/logout">Salir</a>
-                </span>                
+            <div id="contenedor_usuario">                
+                <div class="btn-group">
+                    <button class="btn btn-success">
+                        <?php echo $this->nombreUsuarioHelper('NOMBRE_HEADER') ?>
+                    </button>
+                    <button class="btn dropdown-toggle btn-success" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="#"> <i class="icon-home"></i> texto 1</a></li>                        
+                        <li><a href="#"> <i class="icon-home"></i> texto 2</a></li>   
+                        <li class="divider"></li>
+                        <li><a href="/index/logout"> <i class="icon-off"></i>&nbsp;Salir</a></li>
+                    </ul>
+                </div>
             </div>
         </header>         
 
@@ -61,24 +69,7 @@
                 <div id="dv_contenido" class="span12">                        
                     <?php echo $this->layout()->content; ?> 
                 </div>                    
-            </div>
-            <div class="row">
-                <div class="span12">
-                    <div class="nav">
-
-                        <ul class="nav nav-list">
-                            ...
-                            <li>
-                                <a href="#">
-                                    <i class="icon-book"></i>
-                                    Library
-                                </a>
-                            </li>
-                            ...
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            </div>           
         </div>       
 
         <footer class="right">

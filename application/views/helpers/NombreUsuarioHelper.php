@@ -20,7 +20,7 @@ class Zend_View_Helper_NombreUsuarioHelper extends Zend_View_Helper_Abstract
         $nombreTotal = trim($persona->primerNombre." ".$persona->segundoNombre." ".$persona->primerApellido." ".$persona->segundoApellido);
         switch ($formato) {
             case 'NOMBRE_HEADER':                
-                $str = "Usuario: ".$nombreTotal." (".$usuario->nombreUsuario.")"; 
+                $str = "".$nombreTotal." (".$usuario->nombreUsuario.")"; 
             break;
             case 'NOMBRE_TOTAL':
                 $str = $nombreTotal;
