@@ -16,7 +16,8 @@ class CertificadosController extends Zend_Controller_Action
 
     public function laboralAction()
     { 
-        Zend_Loader::loadClass('TCPDF', APPLICATION_PATH . '/../library/tcpdf');
+        //Zend_Loader::loadClass('TCPDF', APPLICATION_PATH . '/../library/tcpdf');
+        Zend_Loader::loadFile('tcpdf.php', APPLICATION_PATH . '/../library/tcpdf');
         Zend_Loader::loadClass('ValoresToLetras', APPLICATION_PATH . '/../library/util');        
         
         $outDto = new stdClass();

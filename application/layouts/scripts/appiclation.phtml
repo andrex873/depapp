@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="es"> 
     <head>
-        <title>Principal de Drogas APP</title> 
+        <title>Certifica APP</title> 
         <meta charset="utf8"/>         
         <!-- Etiqueta compatibilidad IE con Chrome frame -->
         <meta http-equiv="X-UA-Compatible" content="chrome=1"> 
-              
+
         <?php $this->headLink()->appendStylesheet('/css/extjs4/ext-all.css'); ?>
-        <?php $this->headLink()->appendStylesheet('/css/estilos.css'); ?>
-        
-        <?php $this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
+        <?php $this->headLink()->appendStylesheet('/css/bootstrap.css'); ?>                
+        <?php $this->headLink()->appendStylesheet('/css/estilos.css'); ?> 
+
         <?php //$this->headScript()->appendFile("/js/jquery-1.7.1.min.js"); ?>
-        <?php $this->headScript()->appendFile("/js/scripts.js"); ?>
+        <?php $this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
         <?php $this->headScript()->appendFile("/js/ext-all.js"); ?>
+        <?php $this->headScript()->appendFile("/js/bootstrap.js"); ?>
+        <?php $this->headScript()->appendFile("/js/scripts.js"); ?>
         <?php $this->headScript()->appendFile("/js/menu.js"); ?>
-        
+
         <!-- [inicio] Estilos css -->
         <?php echo $this->headLink() ?>        
         <?php echo $this->cssDinamicoHelper() ?>
         <!-- [fin] Estilos css -->
-        
+
         <!-- [inicio] Archivos javascript -->
         <?php echo $this->headScript() ?>        
         <?php echo $this->javascriptDinamicoHelper() ?>
@@ -38,33 +40,54 @@
                     <a href="/index/logout">Salir</a>
                 </span>                
             </div>
-        </header>            
-        <div id="dv_main">
-            <nav id="nav_menu"></nav>
-            <div id="dv_mensajes_container">
-                <div id="dv_mensajes">
-                    <?php $objMensajes = $this->mensajesHelper() ?>                    
-                    <?php echo $objMensajes['html'] ?>                    
+        </header>         
+
+        <div class="container">
+            <div class="row">
+                <nav id="nav_menu" class="span12"></nav>
+            </div>
+            <div class="row">
+                <div class="span12 bg_white" >
+                    <?php $objMensajes = $this->mensajesHelper() ?>     
+                    <div id="dv_mensajes">                                   
+                        <?php echo $objMensajes['html'] ?>                       
+                    </div>
+                    <p id="p_mensajes" data-opc="show" data-num="<?php echo $objMensajes['count'] ?>" class="center">
+                        Ocultar Mensajes (<?php echo $objMensajes['count'] ?>)
+                    </p>
                 </div>
-                <p id="p_mensajes" data-opc="show" data-num="<?php echo $objMensajes['count'] ?>" class="center">
-                    Ocultar Mensajes (<?php echo $objMensajes['count'] ?>)
-                </p>
             </div>
-            <div id="dv_contenido" class="">             
-                <?php echo $this->layout()->content; ?> 
+            <div class="row">
+                <div id="dv_contenido" class="span12">                        
+                    <?php echo $this->layout()->content; ?> 
+                </div>                    
             </div>
-        </div>
+            <div class="row">
+                <div class="span12">
+                    <div class="nav">
+
+                        <ul class="nav nav-list">
+                            ...
+                            <li>
+                                <a href="#">
+                                    <i class="icon-book"></i>
+                                    Library
+                                </a>
+                            </li>
+                            ...
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>       
+
         <footer class="right">
             Desarrollado por <a href="http://www.incolsoft.com" target="_blank">www.incolsoft.com</a> - Base de conocimiento <a href="http://blog.incolsoft.com" target="_blank">blog.incolsoft.com</a>. 
             <p>
                 Contacto: <a href="mailto:amj.desarrollo@gmail.com">amj.desarrollo@gmail.com</a>
             </p>
-            <p>
-                Derechos reservados <?php echo date('Y') ?> &copy;
-            </p>
-            <p>
-                Bogotá - Colombia
-            </p>            
+            <p>Derechos reservados <?php echo date('Y') ?> &copy;</p>
+            <p>Bogotá - Colombia</p>            
         </footer>
     </body> 
 </html>

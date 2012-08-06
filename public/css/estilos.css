@@ -2,15 +2,9 @@
  * 
  * 
  */
-html, body{
-    height: 100%;    
-}
-html{        
-    background-color: #F5F5F5;
-}
+
 body{    
-    font-family: tahoma,arial,verdana,sans-serif;
-    font-size: 12px;    
+    background-color: #EAF3F8;        
 }
 /* [Inicio] Header */
 header{
@@ -45,21 +39,10 @@ header div#contenedor_usuario a:hover{
 }
 /* [Fin] Header */
 /* [Inicio] Contenido principal */
-#dv_main{
-    width: 1024px;
-    margin: 0 auto;
-    max-width: 1024px;
-    border-left: 1px solid #e2e1e1; 
-    border-right: 1px solid #e2e1e1; 
-    border-bottom: 1px solid #e2e1e1;    
-    height: auto;
-}
+
 #dv_contenido{        
     background-color: white;         
-    display: block;    
-    min-height: 550px; 
     overflow: auto;
-    padding: 0px 7px 7px 7px;     
 }
 /* [Fin] Contenido principal */
 /* [Inicio] Estilos del footer */
@@ -94,8 +77,6 @@ table{
 }
 table tr td{
     vertical-align: top;
-}
-#nav_menu{        
 }
 .btnGeneral {
     font-family: tahoma,arial,verdana,sans-serif;
@@ -132,18 +113,11 @@ table tr td{
 .border{
     border: 1px dotted red;
 }
-.error_login{
-    background-color: #FFFFE0;
-    border: 1px solid #E6DB55;    
-    padding: 5px;
-    border-radius: 5px;
-    text-align: justify;
-}
 /* [Inicio] Estilos para los mensajes */
-#dv_mensajes_container{
+.bg_white{
     background-color: white;    
 }
-#dv_mensajes_container p{
+#p_mensajes{
     width: 180px; 
     padding: 5px; 
     /* background-color: #e2e1e1; */
@@ -160,28 +134,11 @@ table tr td{
     border-bottom: 1px solid #e2e1e1; 
     display: block;
 }
-ul#list_mensajes{    
-    background-color: #FFFFE0;
-    border: 1px solid #E6DB55;
-    margin: 7px;
-    padding: 5px;
-    border-radius: 5px;
-    text-align: justify;
-    box-shadow: 0 0 0.25em #E6DB55;
+
+.msgError{
+    margin: 15px;
 }
-.mError{
-    
-    background: url('/img/error.png') no-repeat 0 center;
-    padding: 3px 20px; 
-    color: #D8000C;
-    margin-left: 5px;
-}
-.mExito{        
-    background: url('/img/ok.png') no-repeat 0 center;
-    padding: 3px 20px; 
-    color: #4F8A10;
-    margin-left: 5px;
-}
+
 /* [FIN] Estilos para los mensajes */
 /* [Inicio] Estilos para los filtros de consulta */
 .formLabel{

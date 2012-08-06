@@ -12,8 +12,8 @@ class Application_Form_Login extends Zend_Form
             ->setLabel('Usuario')
             ->setRequired()                
             ->setAttribs(array(
-                'placeholder' => 'Nombre de usuario',            
-                'class' => 'frm_input',
+                'placeholder' => 'Digite su nombre de usuario...',            
+                'class' => 'span3',
                 'required' => ''
                 ));    
         $this->addElement($nombreusuario);
@@ -23,7 +23,7 @@ class Application_Form_Login extends Zend_Form
             ->setLabel('Clave')
             ->setRequired()                
             ->setAttribs(array(                
-                'class' => 'frm_input',                
+                'class' => 'span3',                
                 'required' => ''                
                 ));    
         $this->addElement($claveusuario);
@@ -32,7 +32,7 @@ class Application_Form_Login extends Zend_Form
         $enviar
             ->setLabel('Ingresar')            
             ->setAttribs(array(                
-                'class' => 'btnGeneral' 
+                'class' => 'btn btn-primary' 
                 ));    
         $this->addElement($enviar);                                         
     }

@@ -1,30 +1,30 @@
 <?php $form = $this->form ?>
-<div id="login_contenedor">    
-    <img class="logo" alt="Incolsoft" src="/img/logo_incolsoft_transparente_v.png">
-    <?php if($this->error){ ?>
-    <div class="error_login">
-        <div class="mError"><?php echo $this->mensaje ?></div>
-        <?php print_r($this->zf) ?>
-    </div>    
-    <?php } ?>
-    <div class="dv_frm">        
-        <form method="<?php echo $form->getMethod() ?>" name="frm_log" action="<?php echo $form->getAction() ?>" id="frm_log">        
-            <p>
-                <label for="nombreusuario" class="frm_label">Usuario</label>
-                </br>
-                <!-- <input type="text" name="nombreusuario" value="" id="nombreusuario" placeholder="Nombre de usuario" required class="frm_input" /> -->
-                <?php echo $form->getElement('nombreusuario')->renderViewHelper() ?>
-            </p>
-            <p>
-                <label for="claveusuario" class="frm_label">Clave</label>
-                </br>
-                <!-- <input type="password" name="claveusuario" value="" id="claveusuario" class="frm_input" required /> -->
-                <?php echo $form->getElement('claveusuario')->renderViewHelper() ?>
-            </p>
-            <p class="right">
-                <!-- <input type="submit" name="enviar" value="Ingresar" class="btn-general" /> -->
-                <?php echo $form->getElement('enviar')->renderViewHelper() ?>
-            </p>                                           
+<div class="row">
+    <div class="span4 offset4 center"><img class="login_logo" src="/img/logo_incolsoft_transparente_v.png" alt="Logo Iincolsoft" /></div>
+</div>
+<div class="row">
+    <div class="span4 offset4">
+        <?php if ($this->error) { ?>
+        <div class="alert alert-error">
+            <a class="close" data-dismiss="alert">×</a>
+            <?php echo $this->mensaje ?>
+        </div>
+        <?php } ?>
+    </div>
+</div>
+<div class="row">
+    <div class="span4 offset4">
+        <form name="frm_log" id="frm_log" action="<?php echo $form->getAction() ?>" method="<?php echo $form->getMethod() ?>" class="well span3">
+            <label for="nombreusuario">Usuario</label>
+            <?php echo $form->getElement('nombreusuario')->renderViewHelper() ?>
+            <label for="claveusuario">Clave</label>
+            <?php echo $form->getElement('claveusuario')->renderViewHelper() ?>
+            <input type="submit" name="Ingresar" value="Ingresar" class="btn btn-primary" /> 
+            &nbsp;&nbsp;&nbsp;
+            <a href="#"><i class="icon-user"></i>&nbsp;Olvide mi contraseña</a> 
         </form>
     </div>
 </div>
+
+<?php print_r($this->zf) ?>
+

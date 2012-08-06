@@ -13,7 +13,7 @@ class Application_Form_CertificadosLaboralFiltro extends Zend_Form
             ->setLabel('Tipo Documento')
             ->setRequired()             
             ->setAttribs(array(                
-                'class' => 'formSelect'                
+                'class' => 'span2'                
                 ));    
         $this->addElement($tipoDocumento);
         
@@ -22,7 +22,7 @@ class Application_Form_CertificadosLaboralFiltro extends Zend_Form
             ->setLabel('Número Documento')
             ->setRequired() 
             ->setAttribs(array(                
-                'class' => 'formInput',                
+                'class' => 'span2',                
                 'required' => ''                
                 ));    
         $this->addElement($numeroDocumento);
@@ -33,7 +33,7 @@ class Application_Form_CertificadosLaboralFiltro extends Zend_Form
             ->setLabel('Dirigido a')
             ->setRequired() 
             ->setAttribs(array(                
-                'class' => 'formInput',                
+                'class' => 'span2',                
                 'required' => ''                
                 ));    
         $this->addElement($dirigido);
