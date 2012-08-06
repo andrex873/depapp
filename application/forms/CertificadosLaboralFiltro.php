@@ -33,7 +33,7 @@ class Application_Form_CertificadosLaboralFiltro extends Zend_Form
             ->setLabel('Dirigido a')
             ->setRequired() 
             ->setAttribs(array(                
-                'class' => 'span2',                
+                'class' => 'span3',                
                 'required' => ''                
                 ));    
         $this->addElement($dirigido);
@@ -42,7 +42,7 @@ class Application_Form_CertificadosLaboralFiltro extends Zend_Form
         $enviar
             ->setLabel('Generar')            
             ->setAttribs(array(                
-                'class' => 'btnGeneral' 
+                'class' => 'btn btn-primary app-btn-form' 
                 ));    
         $this->addElement($enviar);                                         
     }

@@ -1,49 +1,38 @@
 <?php $form = $this->outDto->form; ?>
-<div id="contenedor_filtros" >
-    <form method="post" action="/certificados/laboral">    
-        <fieldset>
-            <legend>Buscar</legend>
-            <table>
-                <tr>
-                    <td>
-                        <label for="tipoDocumento" class="formLabel">Tipo Documento</label>                        
-                        <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="numeroDocumento" class="formLabel">Número Documento</label>                        
-                        <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>
-                    </td>                
-                    <td>
-                        <label for="dirigido" class="formLabel">Dirigido a</label>                        
-                        <?php echo $form->getElement('dirigido')->renderViewHelper() ?>
-                    </td>                
-                </tr>                
-            </table>
-            <p style="margin-top: 5px;" class="center">                
-                <?php echo $form->getElement('enviar')->renderViewHelper() ?>
-            </p>
-        </fieldset>
-    </form>
-</div>
 
-<div class="span6 offset3">
-    <form class="well">
-        <label for="tipoDocumento">Tipo Documento</label>
-        <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>
-        <label for="numeroDocumento">Número Documento</label>
-        <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>    
-        <label for="dirigido">Dirigido a</label>
-        <?php echo $form->getElement('dirigido')->renderViewHelper() ?> 
-
-    </form>
-</div>
-
+<form method="<?php echo $form->getMethod() ?>" action="<?php echo $form->getAction() ?>" class="well app-well app-margin">  
+    <fieldset>
+        <legend class="app-lgend">Buscar</legend>
+        <table class="app-table-spacing">
+            <tr>
+                <td>
+                    <label for="tipoDocumento">Tipo Documento</label>
+                    <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>
+                </td>
+                <td>
+                    <label for="numeroDocumento">Número Documento</label>
+                    <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>   
+                </td>
+                <td>
+                    <label for="dirigido">Dirigido a</label>
+                    <?php echo $form->getElement('dirigido')->renderViewHelper() ?> 
+                </td>
+                <td class="app-td-bottom">
+                    <div>
+                        <?php echo $form->getElement('enviar')->renderViewHelper() ?> 
+                    </div>    
+                </td>
+            </tr>
+        </table>                
+    </fieldset>
+</form>  
 
 <?php if ($this->outDto->existe) { ?>
-    <div id="contenedor_pdf"> 
-        <p>
+<div id="contenedor_pdf" class="app-margin">        
+        <div>
+            <i class="icon-file"></i>
             Visualización de la certificación
-        </p>
+        </div>
         <object data="/<?php echo $this->outDto->pdfPath ?>" type="application/pdf" width="100%" height="500">
         </object>
     </div>   

@@ -1,24 +1,20 @@
-/* 
+/** 
     Document   : certificados_laboral
     Created on : 16/04/2012, 10:18:33 AM
     Author     : amendez
-    Description:
-        Purpose of the stylesheet follows.
-*/
-
-#contenedor_filtros{
-    width: 50em;
-    margin: 0 auto;    
-} 
+    Description: Estilos para la funcionalidad de certificado laboral.        
+**/
+ 
 #contenedor_pdf{
     border: 1px solid #C5D5DD;
     border-radius: 5px;
-    margin: 5px 0;    
     background-color: #E6F1F6;
+    padding: 5px;
 }
-#contenedor_pdf p{
+#contenedor_pdf div{
     padding: 8px;
-    font-size: 13px;
+    display: block;
+    margin: 0;
     font-weight: bold;    
     color: #4E575B;
 }

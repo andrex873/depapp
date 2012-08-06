@@ -1,11 +1,13 @@
-/**
- * 
- * 
- */
-
-body{    
+/** 
+    Document   : estilos
+    Created on : 16/04/2012, 10:18:33 AM
+    Author     : amendez
+    Description: Estilos generales para la aplicación.        
+**/
+body{ 
     background-color: #EAF3F8;        
 }
+
 /* [Inicio] Header */
 header{
     color: #4183C4;
@@ -26,25 +28,16 @@ header div#contenedor_usuario{
     margin-right: 10px; 
     padding: 8px;
 }
-header div#contenedor_usuario a{
-    text-decoration: none; 
-    color: #4183C4;     
-    padding: 4px 7px;    
-}
-header div#contenedor_usuario a:hover{
-    color: #FFFFFF;    
-    border: 0px solid #4183C4;        
-    background-color: #3178be;
-    border-radius: 5px;
-}
 /* [Fin] Header */
-/* [Inicio] Contenido principal */
 
+/* [Inicio] Contenido principal */
 #dv_contenido{        
     background-color: white;         
     overflow: auto;
+    min-height: 500px;
 }
 /* [Fin] Contenido principal */
+
 /* [Inicio] Estilos del footer */
 footer{
     background-color: #3c3434;
@@ -62,45 +55,7 @@ footer a{
 }
 /* [Fin] Estilos del footer */
 
-fieldset{
-    border: 1px solid #666;
-    padding: 0px 8px 8px 8px;
-    border-radius: 5px;
-}
-legend{
-    margin: 0px 5px 5px 5px;
-    padding: 0 5px 0 20px;
-    background: url('/img/lupa.png') no-repeat 2px center; 
-}
-table{
-    width: 100%;
-}
-table tr td{
-    vertical-align: top;
-}
-.btnGeneral {
-    font-family: tahoma,arial,verdana,sans-serif;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 6px 12px;    
-    margin: 0;
-    text-decoration: none;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;    
-            border-radius: 4px;	
-    /* text-shadow: 0px 1px 1px #000000;   */
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
-    border: 1px solid #3079ED;
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#609cff), to(#4787ED));
-    background: -moz-linear-gradient(top, #609cff, #4787ED);     
-}
-.btnGeneral:hover {	    
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#4787ED), to(#609cff));
-    background: -moz-linear-gradient(top, #4787ED, #609cff); 
-    cursor: pointer;    
-
-}
+/* [Inicio] estilos generales */
 .right{
     text-align: right;
 }
@@ -113,10 +68,51 @@ table tr td{
 .border{
     border: 1px dotted red;
 }
-/* [Inicio] Estilos para los mensajes */
 .bg_white{
     background-color: white;    
 }
+.bg_gray{
+    background-color: #F4F4F4;
+}
+.app-btn-form{
+    margin-bottom: 9px;
+}
+.app-lgend{
+    margin: 0 0 7px 0;
+}
+.app-well{
+    padding: 7px 13px;
+}
+.app-margin{
+    margin: 7px;
+}
+.app-no-margin{
+    margin: 0;
+}
+/* [Fin] estilos generales */
+
+/* [Inicio] estilos para tablas */
+table tr td{
+    vertical-align: top;
+}
+.app-table-full{
+    width: 100%;
+}
+.app-table-spacing tr td{
+    padding: 0 5px;
+}
+.app-td-top{
+    vertical-align: top; 
+}
+.app-td-middle{
+    vertical-align: middle;
+}
+.app-td-bottom{
+    vertical-align: bottom;
+}
+/* [Fin] estilos para tablas */
+
+/* [Inicio] Estilos para los mensajes */
 #p_mensajes{
     width: 180px; 
     padding: 5px; 
@@ -134,12 +130,11 @@ table tr td{
     border-bottom: 1px solid #e2e1e1; 
     display: block;
 }
-
-.msgError{
-    margin: 15px;
+.alert-margin{
+    margin: 10px;
 }
-
 /* [FIN] Estilos para los mensajes */
+
 /* [Inicio] Estilos para los filtros de consulta */
 .formLabel{
     display: block;
@@ -157,3 +152,6 @@ table tr td{
     border: 1px solid #4D90FE;
 } 
 /* [FIN] Estilos para los filtros de consulta */
+.bg_test{
+    background-color: #d6e9c6;
+}

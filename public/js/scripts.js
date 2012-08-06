@@ -1,22 +1,13 @@
 /**
- *
+ * Funcion que se ejecuta en el ready de la aplicacion.
  */
 $(document).on('ready', onReadyCallback );
+
 /**
- * 
+ * Funcion que es llamada por el ready de la aplicacion. 
  */
 function onReadyCallback(){   
-    $('#p_mensajes').on('click', desplegarMensajes); 
-    
-    var header_alto = $('header').height();
-    var footer_alto = $('footer').height();            
-    var menu_alto = 20;//$('#nav_menu').height();            
-    var ventana_alto = $('body').height();
-    var alto = (ventana_alto-header_alto-footer_alto-menu_alto);
-    //alert(alto);
-    $('#dv_contenido').css('minHeight', alto+'px');
-    
-    
+    $('#p_mensajes').on('click', desplegarMensajes);         
 }
 /**
  * Funcion para redireccionar peticiones mediante documento.location.    
@@ -43,7 +34,4 @@ function desplegarMensajes(){
         $('#dv_mensajes').show('blind');                            
     }
 }        
-
-
-
 

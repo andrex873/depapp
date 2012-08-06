@@ -19,8 +19,8 @@ class Zend_View_Helper_MensajesHelper extends Zend_View_Helper_Abstract
                     $htmlSusess .= "<li>{$mensaje['msg']}</li>";
                 }                
             }
-            $html .= "<div class='alert alert-error msgError'><ul>".$htmlError."</ul></div>";
-            $html .= "<div class='alert alert-success msgError'><ul>".$htmlSusess."</ul></div>";
+            !empty($htmlError)? $html .= "<div class='alert alert-error alert-margin'><ul class='app-no-margin'>".$htmlError."</ul></div>": false;
+            !empty($htmlSusess)? $html .= "<div class='alert alert-success alert-margin'><ul class='app-no-margin'>".$htmlSusess."</ul></div>": false;            
         }
         $respuesta = array('html' => $html, 'count' => count($mensajes));
         return $respuesta; 

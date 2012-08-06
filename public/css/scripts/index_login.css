@@ -1,6 +1,9 @@
-/**
- * Estilos para la vista login.phtml
- **/
+/** 
+    Document   : index_login
+    Created on : 16/04/2012, 10:18:33 AM
+    Author     : amendez
+    Description: Estilos para la funcionalidad de login.        
+**/
 img.login_logo{
     margin: 10em 0 18px 0;
 }
