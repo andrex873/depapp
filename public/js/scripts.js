@@ -24,13 +24,15 @@ function desplegarMensajes(){
     var numero  = $('#p_mensajes').attr('data-num');
     if(actual == 'show'){
         $('#p_mensajes')       
-            .text('Ver Mensajes (' + numero + ')')
-            .attr('data-opc', 'hide');
+            .attr('data-opc', 'hide')
+            .children("span#p_mensajes_text").text('Ver Mensajes').end()
+            .children("span#p_mensajes_num").text(numero);
         $('#dv_mensajes').hide('blind');                            
     }else{
         $('#p_mensajes')       
-            .text('Ocultar Mensajes (' + numero + ')')
-            .attr({'data-opc':'show'});
+            .attr({'data-opc':'show'})
+            .children("span#p_mensajes_text").text('Ocultar Mensajes').end()
+            .children("span#p_mensajes_num").text(numero);            
         $('#dv_mensajes').show('blind');                            
     }
 }        

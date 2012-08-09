@@ -1,21 +1,13 @@
-<div id="inicio_main" class="app-margin">    
-    <table border="0">
-        <tr> 
-            <?php foreach ($this->dMenu as $key => $menu) {?>
-            <td align="center">
-                <div id="inicio_item">
-                    <img alt="" src="/img/folder_open.png">
-                    <p id="titulo">
-                        <?php echo $menu['nombre'] ?>
-                    </p>
-                    <p id="descripcion">
-                        <?php echo $menu['descripcion'] ?>
-                    </p>
-                </div>
-            </td>
-            <?php echo ( ($key+1) % 4) == 0 ? "</tr><tr>": "" ?>
-            <?php } ?>
-        </tr>
-    </table>
+<div class="row">
+    <?php foreach ($this->dMenu as $key => $menu) { ?>
+        <div class="span3">
+            <div class="well app-margin center">
+                <img alt="<?php echo $menu['nombre'] ?>" src="/img/folder_open.png">
+                <h3 class="app-text-color"><?php echo $menu['nombre'] ?></h3> 
+                <p class="justify app-text-color">
+                    <?php echo $menu['descripcion'] ?>
+                </p> 
+            </div>
+        </div>
+    <?php } ?>    
 </div>
-

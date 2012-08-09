@@ -31,7 +31,7 @@ header div#contenedor_usuario{
 /* [Fin] Header */
 
 /* [Inicio] Contenido principal */
-#dv_contenido{        
+#dv_contenido{            
     background-color: white;         
     overflow: auto;
     min-height: 500px;
@@ -65,8 +65,8 @@ footer a{
 .center{
     text-align: center;
 }
-.border{
-    border: 1px dotted red;
+.justify{
+    text-align: justify;
 }
 .bg_white{
     background-color: white;    
@@ -88,6 +88,9 @@ footer a{
 }
 .app-no-margin{
     margin: 0;
+}
+.app-text-color{
+    color: #3A87AD;
 }
 /* [Fin] estilos generales */
 
@@ -154,4 +157,7 @@ table tr td{
 /* [FIN] Estilos para los filtros de consulta */
 .bg_test{
     background-color: #d6e9c6;
+}
+.border{
+    border: 1px dotted red;
 }

@@ -62,7 +62,8 @@
                         <?php echo $objMensajes['html'] ?>                       
                     </div>
                     <p id="p_mensajes" data-opc="show" data-num="<?php echo $objMensajes['count'] ?>" class="center">
-                        Ocultar Mensajes (<?php echo $objMensajes['count'] ?>)
+                        <span id="p_mensajes_text">Ocultar Mensajes</span>
+                        <span id="p_mensajes_num" class="badge badge-info"><?php echo $objMensajes['count'] ?></span>                        
                     </p>
                 </div>
             </div>

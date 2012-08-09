@@ -4,26 +4,3 @@
     Author     : amendez
     Description: Estilos para la funcionalidad de inicio (Home).
 **/
-div#inicio_main table tr td{
-
-}
-div#inicio_item{
-    border-radius: 5px;
-    border: 1px solid #15498b;
-    padding: 10px;
-    width: 240px;
-    margin: 0 10px 10px 0;
-    text-align: center;
-}
-div#inicio_item:hover{
-    border-style: dotted;
-}
-div#inicio_item p#titulo{
-    font-weight: bold;
-    color: #4183C4;
-    margin: 5px;
-}
-div#inicio_item p#descripcion{
-    text-align: justify;
-    color: #3c3434;
-}
