@@ -82,6 +82,7 @@ class CertificadosController extends Zend_Controller_Action
                     $ruta = "tmp/RRHHCL001.pdf";                
                     $pdf->Output($ruta, 'F');                
                     $outDto->pdfPath = $ruta;                                 
+                    $outDto->pdfName = basename($ruta);                                 
                 }
             } else {
                 $this->_helper->mensajes('E', "Error en los datos ingresados.");

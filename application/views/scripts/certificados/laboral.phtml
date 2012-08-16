@@ -28,12 +28,11 @@
 </form>  
 
 <?php if ($this->outDto->existe) { ?>
-<div id="contenedor_pdf" class="app-margin">        
+    <div id="contenedor_pdf" class="app-margin">        
         <div>
             <i class="icon-file"></i>
-            Visualización de la certificación
+            Visualización de la certificación: <a href="/<?php echo $this->outDto->pdfPath ?>" target="_blank"><?php echo $this->outDto->pdfName ?></a>
         </div>
-        <object data="/<?php echo $this->outDto->pdfPath ?>" type="application/pdf" width="100%" height="500">
-        </object>
+        <object data="/<?php echo $this->outDto->pdfPath ?>" type="application/pdf" width="100%" height="600"></object>
     </div>   
 <?php } ?>
