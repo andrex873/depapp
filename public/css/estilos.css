@@ -5,28 +5,38 @@
     Description: Estilos generales para la aplicación.        
 **/
 body{ 
-    background-color: #EAF3F8;        
+    background-color: #EAF3F8;   
+    font-size: 12px;
+}
+.dFondo{
+    background: rgb(234,243,248); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(234,243,248,1) 61%, rgba(226,226,226,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(61%,rgba(234,243,248,1)), color-stop(100%,rgba(226,226,226,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(234,243,248,1) 61%,rgba(226,226,226,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(234,243,248,1) 61%,rgba(226,226,226,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(234,243,248,1) 61%,rgba(226,226,226,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(234,243,248,1) 61%,rgba(226,226,226,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaf3f8', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */
 }
 
 /* [Inicio] Header */
 header{
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 14%, rgba(232,232,232,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(14%,rgba(255,255,255,1)), color-stop(100%,rgba(232,232,232,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 14%,rgba(232,232,232,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 14%,rgba(232,232,232,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 14%,rgba(232,232,232,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 14%,rgba(232,232,232,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+
     color: #4183C4;
     font-weight: bold;
     position: relative;
-    height: 7em; 
+    height: 6.5em; 
     display: block; 
     border-bottom: 3px solid #357AE8;
     padding: 8px 10px;    
-}
-header div#logo{
-    float: left;
-}
-header div#contenedor_usuario{
-    position: absolute; 
-    bottom: 0; 
-    right: 0; 
-    margin-right: 10px; 
-    padding: 8px;
 }
 /* [Fin] Header */
 
@@ -35,23 +45,27 @@ header div#contenedor_usuario{
     background-color: white;         
     overflow: auto;
     min-height: 500px;
+    border-radius: 0 0 5px 5px; 
+    border-bottom: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
 }
 /* [Fin] Contenido principal */
 
 /* [Inicio] Estilos del footer */
 footer{
-    background-color: #3c3434;
-    border-top: 2px solid silver;
-    height: 100px;
-    color: #e2e1e1;
+    /* background-color: #3c3434; */
+    /* border-top: 2px solid silver; */
+    /* height: 100px; */
+    color: #3c3434; /* #e2e1e1; */
     margin-top: 5px;
     padding-right: 20px;    
     padding: 15px 15px;
 }
 footer a{
-    color: white;
+    color: #3c3434;
     text-decoration: none;
-    text-shadow: 2px 1px 1px silver;
+    text-shadow: 2px 1px 1px white;
 }
 /* [Fin] Estilos del footer */
 
@@ -116,6 +130,10 @@ table tr td{
 /* [Fin] estilos para tablas */
 
 /* [Inicio] Estilos para los mensajes */
+.area_msg{
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+}
 #p_mensajes{
     width: 180px; 
     padding: 5px; 
@@ -137,27 +155,3 @@ table tr td{
     margin: 10px;
 }
 /* [FIN] Estilos para los mensajes */
-
-/* [Inicio] Estilos para los filtros de consulta */
-.formLabel{
-    display: block;
-    padding: 3px;
-    margin: 4px 2px 3px 0;        
-    background-color: #e2e1e1;
-}
-.formInput{
-    padding: 4px;        
-    border: 1px solid #4D90FE; 
-    border-radius: 3px;
-}
-.formSelect{
-    padding: 4px;
-    border: 1px solid #4D90FE;
-} 
-/* [FIN] Estilos para los filtros de consulta */
-.bg_test{
-    background-color: #d6e9c6;
-}
-.border{
-    border: 1px dotted red;
-}
