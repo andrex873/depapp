@@ -45,7 +45,7 @@ header{
     background-color: white;         
     overflow: auto;
     min-height: 500px;
-    border-radius: 0 0 5px 5px; 
+    border-radius: 0 0 10px 10px; 
     border-bottom: 1px solid #e8e8e8;
     border-left: 1px solid #e8e8e8;
     border-right: 1px solid #e8e8e8;
