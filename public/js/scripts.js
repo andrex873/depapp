@@ -8,6 +8,14 @@ $(document).on('ready', onReadyCallback );
  */
 function onReadyCallback(){   
     $('#p_mensajes').on('click', desplegarMensajes);         
+    $('input[data-type="dateCalendar"]').datepicker({
+        monthNames:['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'], 
+        dayNamesMin:['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'], 
+        dayNames:['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'], 
+        weekHeader:'W',
+        showWeek:true,
+        dateFormat: 'dd/mm/yy'
+    });
 }
 /**
  * Funcion para redireccionar peticiones mediante documento.location.    

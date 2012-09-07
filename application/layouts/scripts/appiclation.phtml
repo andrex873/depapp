@@ -7,14 +7,15 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1"> 
 
         <?php $this->headLink()->appendStylesheet('/css/extjs4/ext-all.css'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/jquery-bt-theme/jquery-ui-1.8.23.custom.css'); ?>                
         <?php $this->headLink()->appendStylesheet('/css/bootstrap.css'); ?>                
         <?php $this->headLink()->appendStylesheet('/css/estilos.css'); ?> 
-
-        <?php //$this->headScript()->appendFile("/js/jquery-1.7.1.min.js"); ?>
-        <?php $this->headScript()->appendFile("https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"); ?>
+        
+        <?php $this->headScript()->appendFile("//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"); ?>
+        <?php $this->headScript()->appendFile("//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"); ?>
         <?php (APPLICATION_ENV != 'development')? $this->headScript()->appendFile("/js/ga.js"): ''; ?>
         <?php $this->headScript()->appendFile("/js/ext-all.js"); ?>
-        <?php $this->headScript()->appendFile("/js/bootstrap.js"); ?>
+        <?php $this->headScript()->appendFile("/js/bootstrap.js"); ?>        
         <?php $this->headScript()->appendFile("/js/scripts.js"); ?>
         <?php $this->headScript()->appendFile("/js/menu.js"); ?>
 

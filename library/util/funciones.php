@@ -92,3 +92,44 @@ function fnTiposIdentificacion() {
         'CE' => 'CE'
         );
 }
+function fnEstados() {
+    return array(
+        'ACT' => 'Activo',
+        'INA' => 'Inactivo',        
+        );
+}
+function fnEstadosPersonas() {
+    return array(
+        'ACT' => 'Activo',
+        'INA' => 'Inactivo',
+        'RET' => 'Retirado'
+        );
+}
+/**
+ * Función que cambia el formato de una fecha MySql yyyy-mm-dd
+ * al formato dd/mm/yyyy para visualización.
+ * @param String $fecha Fecha en formato yyyy-mm-dd.
+ * @return String Fecha en formato dd/mm/yyyy. 
+ */
+function fn2ddmmyyyy($fecha){
+    $patron = '/[0-9]{4}\-[0-9]{2}\-[0-9]{2}/';
+    if(preg_match($patron, $fecha)){
+        list($y, $m, $d) = explode('-', $fecha);
+        return $d.'/'.$m.'/'.$y;
+    }
+    return '';     
+}
+/**
+ * Función que cambia una fecha en formato dd/mm/yyyy a yyyy-mm-dd
+ * para poder ser almacenada en MySql.
+ * @param String $fecha Fecha en formato dd/mm/yyyy.
+ * @return String Fecha en formato yyyy-mm-dd. 
+ */
+function fn2yyyymmdd($fecha){
+    $patron = '/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/';
+    if(preg_match($patron, $fecha)){
+        list($d, $m, $y) = explode('/', $fecha);
+        return $y.'-'.$m.'-'.$d;
+    }
+    return '';
+}

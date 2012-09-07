@@ -1,0 +1,35 @@
+<div class="app-margin">
+    <table class="table table-condensed table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Tip. Doc</th>
+                <th>Num. Documento</th>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>
+                    <a href="/personas/crear/" class="btn btn-mini btn-success"><i class="icon-plus-sign icon-white"></i> Crear Persona</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if ($this->personas) { ?>
+                <?php foreach ($this->personas as $clave => $valor) { ?>
+                    <tr>
+                        <td><?php echo $valor['tipoDocumento'] ?></td>
+                        <td><?php echo $valor['numeroDocumento'] ?></td>
+                        <td><?php echo $valor['primerApellido'] . " " . $valor['segundoApellido'] ?></td>
+                        <td><?php echo $valor['primerNombre'] . " " . $valor['segundoNombre'] ?></td>
+                        <td>
+                            <a href="/personas/crear/id/<?php echo $valor['idPersona'] ?>" class="btn btn-mini btn-info"><i class="icon-pencil icon-white"></i> Editar</a>                                
+                            <a href="/personas/eliminar/id/<?php echo $valor['idPersona'] ?>" class="btn btn-mini btn-danger"><i class="icon-remove icon-white"></i> Eliminar</a>
+                        </td>                
+                    </tr>
+                <?php } ?>
+            <?php } else { ?>
+                <tr class="warning">
+                    <td colspan="5">No hay registros para mostrar.</td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
