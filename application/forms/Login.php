@@ -10,21 +10,22 @@ class Application_Form_Login extends Zend_Form
         $nombreusuario = new Zend_Form_Element_Text('nombreusuario');
         $nombreusuario
             ->setLabel('Usuario')
-            ->setRequired()                
+            ->setRequired(true)                 
             ->setAttribs(array(
                 'placeholder' => 'Digite su nombre de usuario...',            
-                'class' => 'span3',
-                'required' => ''
-                ));    
+                'class' => 'span3',                
+                'required' => 'required'
+                ))
+            ->addValidator('alnum');
         $this->addElement($nombreusuario);
         
         $claveusuario = new Zend_Form_Element_Password('claveusuario');
         $claveusuario
             ->setLabel('Clave')
-            ->setRequired()                
+            ->setRequired(true)                
             ->setAttribs(array(                
                 'class' => 'span3',                
-                'required' => ''                
+                'required' => 'required'                
                 ));    
         $this->addElement($claveusuario);
         
