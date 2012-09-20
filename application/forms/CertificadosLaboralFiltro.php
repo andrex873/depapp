@@ -23,8 +23,9 @@ class Application_Form_CertificadosLaboralFiltro extends Zend_Form
             ->setRequired() 
             ->setAttribs(array(                
                 'class' => 'span2',                
-                'required' => ''                
-                ));    
+                'required' => 'required'                
+                ))
+            ->addValidator('Digits');    
         $this->addElement($numeroDocumento);
         
         $dirigido = new Zend_Form_Element_Text('dirigido');
@@ -34,7 +35,7 @@ class Application_Form_CertificadosLaboralFiltro extends Zend_Form
             ->setRequired() 
             ->setAttribs(array(                
                 'class' => 'span3',                
-                'required' => ''                
+                'required' => 'required'                
                 ));    
         $this->addElement($dirigido);
         

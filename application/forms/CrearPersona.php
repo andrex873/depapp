@@ -13,21 +13,7 @@ class Application_Form_CrearPersona extends Zend_Form {
         
         $this->initData();
         $this->initElements();
-    }
-
-    private function initData() {
-        $tCargos = new Application_Model_Cargos();
-        $cargos = $tCargos->fetchAll("estadoCargo = 'ACT'")->toArray();
-        foreach ($cargos as $clave => $valor) {
-            $this->cargos[$valor['idCargo']] = $valor['nombreCargo'];
-        }
-        
-        $tTipoContratos = new Application_Model_TipoContratos();
-        $tipoContratos = $tTipoContratos->fetchAll("estadoTipoContrato = 'ACT'")->toArray();
-        foreach ($tipoContratos as $clave => $valor) {
-            $this->tipoContratos[$valor['idTipoContrato']] = $valor['nombreTipoContrato'];
-        }
-    }
+    }    
 
     private function initElements() {
         $tipoDocumento = new Zend_Form_Element_Select('tipoDocumento');
@@ -46,7 +32,7 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span2',
-                    'required' => ''
+                    'required' => 'required'
                 ));
         $this->addElement($numeroDocumento);
         
@@ -56,14 +42,13 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span3',
-                    'required' => ''
+                    'required' => 'required'
                 ));
         $this->addElement($primerNombre);
         
         $segundoNombre = new Zend_Form_Element_Text('segundoNombre');
         $segundoNombre
-                ->setLabel('Segundo Nombre')
-                //->setRequired()
+                ->setLabel('Segundo Nombre')                
                 ->setAttribs(array(
                     'class' => 'span3',                    
                 ));
@@ -75,7 +60,7 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span3',
-                    'required' => ''
+                    'required' => 'required'
                 ));
         $this->addElement($primerApellido);
         
@@ -85,20 +70,19 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span3',
-                    'required' => ''
+                    'required' => 'required'
                 ));
         $this->addElement($segundoApellido);
 
         $fechaNacimiento = new Zend_Form_Element_Text('fechaNacimiento');
-        $fechaNacimiento
-                //->setValue('')
+        $fechaNacimiento                
                 ->setLabel('Fecha Nacimiento')
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span2',
                     'data-type' => 'dateCalendar',
-                    'required' => ''
-                ));
+                    'required' => 'required'
+                ));                
         $this->addElement($fechaNacimiento);
 
         $estado = new Zend_Form_Element_Select('estado');
@@ -118,14 +102,13 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setAttribs(array(
                     'class' => 'span2',
                     'data-type' => 'dateCalendar',
-                    'required' => ''
+                    'required' => 'required'
                 ));
         $this->addElement($fechaIngreso);
         
         $fechaRetiro = new Zend_Form_Element_Text('fechaRetiro');
         $fechaRetiro                
-                ->setLabel('Fecha Retiro')
-                //->setRequired()
+                ->setLabel('Fecha Retiro')                
                 ->setAttribs(array(
                     'class' => 'span2',
                     'data-type' => 'dateCalendar'                  
@@ -138,7 +121,7 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span2',
-                    'required' => ''
+                    'required' => 'required'
                 ));
         $this->addElement($salario);
         
@@ -178,5 +161,19 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ));
         $this->addElement($limpiar);
     }
-
+    
+    private function initData() {
+        // Obtener de la base de datos los cargos.
+        $tCargos = new Application_Model_Cargos();
+        $cargos = $tCargos->fetchAll("estadoCargo = 'ACT'")->toArray();
+        foreach ($cargos as $clave => $valor) {
+            $this->cargos[$valor['idCargo']] = $valor['nombreCargo'];
+        }
+        // Obtener de la base de datos los tipos de contrato.
+        $tTipoContratos = new Application_Model_TipoContratos();
+        $tipoContratos = $tTipoContratos->fetchAll("estadoTipoContrato = 'ACT'")->toArray();
+        foreach ($tipoContratos as $clave => $valor) {
+            $this->tipoContratos[$valor['idTipoContrato']] = $valor['nombreTipoContrato'];
+        }
+    }
 }
