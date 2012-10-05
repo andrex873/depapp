@@ -16,12 +16,14 @@
                 <?php foreach ($this->personas as $clave => $valor) { ?>
                     <tr>
                         <td><?php echo $valor['tipoDocumento'] ?></td>
-                        <td><?php echo $valor['numeroDocumento'] ?></td>
+                        <td class="right"><?php echo fnFormatoNumero($valor['numeroDocumento']) ?></td>
                         <td><?php echo $valor['primerApellido'] . " " . $valor['segundoApellido'] ?></td>
                         <td><?php echo $valor['primerNombre'] . " " . $valor['segundoNombre'] ?></td>
                         <td>
                             <a href="/personas/crear/id/<?php echo $valor['idPersona'] ?>" class="btn btn-mini btn-info"><i class="icon-pencil icon-white"></i> Editar</a>                                
-                            <a href="/personas/eliminar/id/<?php echo $valor['idPersona'] ?>" class="btn btn-mini btn-danger"><i class="icon-remove icon-white"></i> Eliminar</a>
+                            <a href="/personas/eliminar/id/<?php echo $valor['idPersona'] ?>" class="btn btn-mini btn-danger" data-confirm="¿Esta seguro que desea eliminar la persona?">
+                                <i class="icon-remove icon-white"></i> Eliminar
+                            </a>
                         </td>                
                     </tr>
                 <?php } ?>
@@ -31,5 +33,5 @@
                 </tr>
             <?php } ?>
         </tbody>
-    </table>
+    </table>    
 </div>

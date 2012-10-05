@@ -7,7 +7,10 @@ $(document).on('ready', onReadyCallback );
  * Funcion que es llamada por el ready de la aplicacion. 
  */
 function onReadyCallback(){   
-    $('#p_mensajes').on('click', desplegarMensajes);         
+    // Desplegar los mensajes de la aplicación
+    $('#p_mensajes').on('click', desplegarMensajes);
+    
+    // Agrega un datepicker a los inpus en la aplicación
     $('input[data-type="dateCalendar"]').datepicker({
         monthNames:['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'], 
         dayNamesMin:['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'], 
@@ -15,6 +18,12 @@ function onReadyCallback(){
         weekHeader:'W',
         showWeek:true,
         dateFormat: 'dd/mm/yy'
+    });
+    
+    // Agregar mensaje de confirmación a la eliminacion de registros
+    $('a[data-confirm]').on('click', function(){
+        var texto = $(this).attr('data-confirm');
+        return confirm(texto);
     });
 }
 /**

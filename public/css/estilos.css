@@ -71,10 +71,10 @@ footer a{
 
 /* [Inicio] estilos generales */
 .right{
-    text-align: right;
+    text-align: right !important;
 }
 .left{
-    text-align: left;
+    text-align: left  !important;
 }
 .center{
     text-align: center;
