@@ -8,7 +8,7 @@ class PersonasController extends Zend_Controller_Action {
 
     public function indexAction() {
         $tPersonas = new Application_Model_Personas();
-        $personas = $tPersonas->fetchAll()->toArray();
+        $personas = $tPersonas->fetchAll(null, null, 20)->toArray();
         $this->view->personas = $personas;
     }
 
@@ -17,9 +17,8 @@ class PersonasController extends Zend_Controller_Action {
         if ($this->getRequest()->ispost()) {
             $post = $this->getRequest()->getPost();
             if ($form->isValid($post)) {
-                $tPersonas = new Application_Model_Personas();
-                $persona = $tPersonas->fetchRow("tipoDocumento = '{$post['tipoDocumento']}' AND numeroDocumento = '{$post['numeroDocumento']}' ");
-                if ($persona == null) {
+                $tPersonas = new Application_Model_Personas();                
+                if (!$tPersonas->existeIdentificacion($post['tipoDocumento'], $post['numeroDocumento'])) {
                     $data = array(
                         'idCargo' => $post['idCargo'],
                         'idTipoContrato' => $post['idTipoContrato'],

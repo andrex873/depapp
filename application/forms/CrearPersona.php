@@ -42,7 +42,8 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span3',
-                    'required' => 'required'
+                    'required' => 'required',
+                    'placeholder' => "Primer Nombre"
                 ));
         $this->addElement($primerNombre);
         
@@ -50,7 +51,8 @@ class Application_Form_CrearPersona extends Zend_Form {
         $segundoNombre
                 ->setLabel('Segundo Nombre')                
                 ->setAttribs(array(
-                    'class' => 'span3',                    
+                    'class' => 'span3',
+                    'placeholder' => "Segundo Nombre"
                 ));
         $this->addElement($segundoNombre);
         
@@ -60,7 +62,8 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span3',
-                    'required' => 'required'
+                    'required' => 'required',
+                    'placeholder' => "Primer Apellido"
                 ));
         $this->addElement($primerApellido);
         
@@ -70,7 +73,8 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setRequired()
                 ->setAttribs(array(
                     'class' => 'span3',
-                    'required' => 'required'
+                    'required' => 'required',
+                    'placeholder' => "Segundo Apellido"
                 ));
         $this->addElement($segundoApellido);
 
@@ -131,7 +135,7 @@ class Application_Form_CrearPersona extends Zend_Form {
                 ->setLabel('Cargo')
                 ->setRequired()
                 ->setAttribs(array(
-                    'class' => 'span2'
+                    'class' => 'span3'
                 ));
         $this->addElement($idCargo);
         
@@ -164,16 +168,11 @@ class Application_Form_CrearPersona extends Zend_Form {
     
     private function initData() {
         // Obtener de la base de datos los cargos.
-        $tCargos = new Application_Model_Cargos();
-        $cargos = $tCargos->fetchAll("estadoCargo = 'ACT'")->toArray();
-        foreach ($cargos as $clave => $valor) {
-            $this->cargos[$valor['idCargo']] = $valor['nombreCargo'];
-        }
+        $tCargos = new Application_Model_Cargos();        
+        $this->cargos = $tCargos->getAllClaveValor();
+        
         // Obtener de la base de datos los tipos de contrato.
-        $tTipoContratos = new Application_Model_TipoContratos();
-        $tipoContratos = $tTipoContratos->fetchAll("estadoTipoContrato = 'ACT'")->toArray();
-        foreach ($tipoContratos as $clave => $valor) {
-            $this->tipoContratos[$valor['idTipoContrato']] = $valor['nombreTipoContrato'];
-        }
+        $tTipoContratos = new Application_Model_TipoContratos();        
+        $this->tipoContratos = $tTipoContratos->getAllClaveValor();
     }
 }
