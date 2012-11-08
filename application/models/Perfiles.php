@@ -12,15 +12,14 @@ class Application_Model_Perfiles  extends Zend_Db_Table_Abstract
     const ADM = 1;
     
     /**
-     * Constante que identifica el id del perfil Coordinador. 
-     */
-    const COO = 2;
-    
-    /**
      * Constante que identifica el id del perfil Consulta.  
      */
-    const CON = 3;
+    const CON = 2;
     
-    
+    /**
+     * Constante que identifica el id del perfil Coordinador. 
+     */
+    const COO = 3;
+        
 }
 

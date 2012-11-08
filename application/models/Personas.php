@@ -9,7 +9,7 @@ class Application_Model_Personas extends Zend_Db_Table_Abstract
      * Método que obtiene los datos necesarios para generar una certificación laboral.
      * @param String $tipoDocumento Tipo de identificación de la persona a la cual se le genera la certificación.
      * @param Integer $numeroDocumento Número de identificación de la persona a la cual se le genera la certificación.
-     * @return Array Con los datos consultados en la base de datos.
+     * @return Array|false Array con los datos consultados en la base de datos o <b>false</b> si no encuentra el registro.
      */
     public function getCertificacionLaboralInformacion($tipoDocumento, $numeroDocumento) {
         $db = $this->getAdapter();                

@@ -6,12 +6,12 @@
         <table class="app-table-spacing">
             <tr>
                 <td>
-                    <label for="tipoDocumento">Tipo Documento</label>
-                    <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>
+                    <label for="tipoDocumento">Tipo Documento</label>                    
+                    <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>                    
                 </td>
                 <td>
-                    <label for="numeroDocumento">Número Documento</label>
-                    <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>   
+                    <label for="numeroDocumento">Número Documento</label>                    
+                    <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>                                           
                 </td>
                 <td>
                     <label for="dirigido">Dirigido a</label>
@@ -31,7 +31,7 @@
     <div id="contenedor_pdf" class="app-margin">        
         <div>
             <i class="icon-file"></i>
-            Visualización de la certificación: <a href="/<?php echo $this->outDto->pdfPath ?>" target="_blank"><?php echo $this->outDto->pdfName ?></a>
+            Visualización de la certificación: <a id="descargarCl" href="/<?php echo $this->outDto->pdfPath ?>" target="_blank"><?php echo $this->outDto->pdfName ?></a>            
         </div>
         <object data="/<?php echo $this->outDto->pdfPath ?>" type="application/pdf" width="100%" height="600"></object>
     </div>   

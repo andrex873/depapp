@@ -23,9 +23,8 @@ class IndexController extends Zend_Controller_Action
         $this->view->error = false;
         $form = new Application_Form_Login();                
         if ($this->getRequest()->isPost()) {                        
-            $post = $this->getRequest()->getPost(); 
-            $val = $form->isValid($post);
-            if($val){
+            $post = $this->getRequest()->getPost();             
+            if($form->isValid($post)){
                 $auAdapter = new Zend_Auth_Adapter_DbTable();
                 $auAdapter->setTableName('t_usuarios')
                         ->setIdentityColumn('nombreUsuario')
@@ -52,8 +51,7 @@ class IndexController extends Zend_Controller_Action
                 }
             }else{            
                 $this->view->error = true;
-                $this->view->mensaje = "Error en los datos de ingreso, los campos no pueden estar vacios.";                                                
-                $this->view->zf = $form->getMessages();
+                $this->view->mensaje = "Error en los datos de ingreso, los campos no pueden estar vacios.";                 
             }        
         }
         $this->view->form = $form;
