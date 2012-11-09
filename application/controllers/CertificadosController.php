@@ -1,7 +1,9 @@
 <?php
 
 class CertificadosController extends Zend_Controller_Action
-{        
+{
+    
+    const PATH_INDEX = '/certificados';
 
     public function init()
     {
@@ -13,6 +15,7 @@ class CertificadosController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        $this->_redirect("/");
     }
 
     public function laboralAction()

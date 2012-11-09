@@ -38,12 +38,22 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         
     protected function _initCargarConfiguracion()
     {           
-        $globalConf = new Zend_Config_Ini(APPLICATION_PATH . "/configs/global-config.ini", 'general');
-        Zend_Registry::set("globalConf", $globalConf);                            
+        $configuracionApp = new Zend_Config_Ini(APPLICATION_PATH . "/configs/global-config.ini", 'general');
+        Zend_Registry::set("configuracionApp", $configuracionApp);                            
         
-        date_default_timezone_set($globalConf->TIMEZONE);
-        setlocale(LC_ALL, $globalConf->LOCALE);        
-        //setlocale(LC_ALL, "es_ES@euro", "es_ES.UTF8", "esp");        
+        date_default_timezone_set($configuracionApp->TIMEZONE);
+        setlocale(LC_ALL, $configuracionApp->LOCALE);        
+        defined('__CRYP_KEY__')
+            || define('__CRYP_KEY__', $configuracionApp->ENCRIPTAR_KEY);        
+    }
+    
+    protected function _initSessionTimeOut()
+    {           
+        if(Zend_Auth::getInstance()->hasIdentity()){
+            $authSession = new Zend_Session_Namespace('Zend_Auth');
+            // La Sesion expira a los 5 minutos.
+            $authSession->setExpirationSeconds(5*60);
+        }
     }
 
 }

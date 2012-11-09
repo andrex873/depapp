@@ -2,6 +2,8 @@
 
 class IndexController extends Zend_Controller_Action
 {
+    
+    const PATH_INDEX = '/index';
 
     private $session = null;
 

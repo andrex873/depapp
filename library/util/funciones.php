@@ -74,7 +74,7 @@ function fnEncriptar($texto, $key){
  * @param type $key
  * @return type 
  */
-function fnDesencriptar($texto, $key) {
+function fnDesEncriptar($texto, $key) {
     $result = '';
     $texto = base64_decode(str_replace('-', '+', str_replace('_', '/', $texto)));
     for($index = 0; $index < strlen($texto); $index++) {

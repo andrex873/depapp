@@ -1,171 +1,171 @@
 <?php $form = $this->form; ?>
 <?php $formulario = 1 ?>
 <div class="app-margin">
-<?php if($formulario == 1){ ?>
-     <form action="<?php $form->getAction() ?>" method="<?php echo $form->getMethod() ?>" class="well app-well">
-        <fieldset>
-            <legend class="app-legend">Ingresar Persona</legend>
-            <table class="app-table-spacing">
-                <tr>
-                    <td>
-                        <label for="tipoDocumento">Tipo Documento</label>
-    <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="numeroDocumento">N&uacute;mero Documento</label>
-    <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="estado">Estado</label>
-    <?php echo $form->getElement('estado')->renderViewHelper() ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="primerNombre">Primer Nombre</label>
-    <?php echo $form->getElement('primerNombre')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="segundoNombre">Segundo Nombre</label>
-    <?php echo $form->getElement('segundoNombre')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="primerApellido">Primer Apellido</label>
-    <?php echo $form->getElement('primerApellido')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="segundoApellido">Segundo Apellido</label>
-    <?php echo $form->getElement('segundoApellido')->renderViewHelper() ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="fechaNacimiento">Fecha Nacimiento</label>
-    <?php echo $form->getElement('fechaNacimiento')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="fechaIngreso">Fecha de ingreso</label>
-    <?php echo $form->getElement('fechaIngreso')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="fechaRetiro">Fecha de retiro</label>
-    <?php echo $form->getElement('fechaRetiro')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="salario">Salario</label>
+    <?php if ($formulario == 1) { ?>
+        <form action="<?php $form->getAction() ?>" method="<?php echo $form->getMethod() ?>" class="well app-well">
+            <fieldset>
+                <legend class="app-legend">Ingresar Persona</legend>
+                <table class="app-table-spacing">
+                    <tr>
+                        <td>
+                            <label for="tipoDocumento">Tipo Documento</label>
+                            <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="numeroDocumento">N&uacute;mero Documento</label>
+                            <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="estado">Estado</label>
+                            <?php echo $form->getElement('estado')->renderViewHelper() ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="primerNombre">Primer Nombre</label>
+                            <?php echo $form->getElement('primerNombre')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="segundoNombre">Segundo Nombre</label>
+                            <?php echo $form->getElement('segundoNombre')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="primerApellido">Primer Apellido</label>
+                            <?php echo $form->getElement('primerApellido')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="segundoApellido">Segundo Apellido</label>
+                            <?php echo $form->getElement('segundoApellido')->renderViewHelper() ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="fechaNacimiento">Fecha Nacimiento</label>
+                            <?php echo $form->getElement('fechaNacimiento')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="fechaIngreso">Fecha de ingreso</label>
+                            <?php echo $form->getElement('fechaIngreso')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="fechaRetiro">Fecha de retiro</label>
+                            <?php echo $form->getElement('fechaRetiro')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="salario">Salario</label>
+                            <div class="input-prepend input-append">
+                                <span class="add-on">$</span>
+                                <?php echo $form->getElement('salario')->renderViewHelper() ?>
+                                <span class="add-on">.00</span>
+                            </div>                        
+                        </td>                    
+                    </tr>              
+                    <tr>
+                        <td>
+                            <label for="idCargo">Cargo</label>
+                            <?php echo $form->getElement('idCargo')->renderViewHelper() ?>
+                        </td>
+                        <td>
+                            <label for="idTipoContrato">Tipo Contrato</label>
+                            <?php echo $form->getElement('idTipoContrato')->renderViewHelper() ?>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td class="app-td-bottom right">
+                            <?php echo $form->getElement('grabar')->renderViewHelper() ?> 
+                            <?php echo $form->getElement('limpiar')->renderViewHelper() ?> 
+                        </td>
+                    </tr>              
+                </table>
+            </fieldset>            
+        </form>
+
+    <?php } else if ($formulario == 2) { ?>
+        <form action="<?php $form->getAction() ?>" method="<?php echo $form->getMethod() ?>" class="form-horizontal bg_gray">
+            <fieldset>
+                <legend class="">Ingresar Persona</legend>
+                <div class="control-group">
+                    <label class="control-label" for="tipoDocumento">Tipo y numero Documento</label>
+                    <div class="controls">
+                        <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>            
+                        <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="primerNombre">Nombre</label>
+                    <div class="controls">
+                        <?php echo $form->getElement('primerNombre')->renderViewHelper() ?>
+                        <?php echo $form->getElement('segundoNombre')->renderViewHelper() ?>
+                        <?php echo $form->getElement('primerApellido')->renderViewHelper() ?>
+                        <?php echo $form->getElement('segundoApellido')->renderViewHelper() ?>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="estado">Estado</label>
+                    <div class="controls">
+                        <?php echo $form->getElement('estado')->renderViewHelper() ?>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="fechaNacimiento">Fecha Nacimiento</label>                    
+                    <div class="controls">
+                        <?php echo $form->getElement('fechaNacimiento')->renderViewHelper() ?>
+                    </div>
+                </div>            
+                <div class="control-group">                    
+                    <label class="control-label" for="fechaIngreso">Fecha de ingreso</label>
+                    <div class="controls">
+                        <?php echo $form->getElement('fechaIngreso')->renderViewHelper() ?>
+                    </div>
+                </div>
+                <div class="control-group">                                
+                    <label class="control-label" for="fechaRetiro">Fecha de retiro</label>
+                    <div class="controls">
+                        <?php echo $form->getElement('fechaRetiro')->renderViewHelper() ?>
+                    </div>
+                </div>
+                <div class="control-group">                                
+                    <label class="control-label" for="salario">Salario</label>
+                    <div class="controls">
                         <div class="input-prepend input-append">
                             <span class="add-on">$</span>
-    <?php echo $form->getElement('salario')->renderViewHelper() ?>
+                            <?php echo $form->getElement('salario')->renderViewHelper() ?>
                             <span class="add-on">.00</span>
                         </div>                        
-                    </td>                    
-                </tr>              
-                <tr>
-                    <td>
-                        <label for="idCargo">Cargo</label>
-    <?php echo $form->getElement('idCargo')->renderViewHelper() ?>
-                    </td>
-                    <td>
-                        <label for="idTipoContrato">Tipo Contrato</label>
-    <?php echo $form->getElement('idTipoContrato')->renderViewHelper() ?>
-                    </td>
-                    <td>&nbsp;</td>
-                    <td class="app-td-bottom right">
-    <?php echo $form->getElement('grabar')->renderViewHelper() ?> 
-    <?php echo $form->getElement('limpiar')->renderViewHelper() ?> 
-                    </td>
-                </tr>              
-            </table>
-        </fieldset>            
-    </form>
-    
-    <?php }else if($formulario == 2){ ?>
-    <form action="<?php $form->getAction() ?>" method="<?php echo $form->getMethod() ?>" class="form-horizontal bg_gray">
-        <fieldset>
-            <legend class="">Ingresar Persona</legend>
-            <div class="control-group">
-                <label class="control-label" for="tipoDocumento">Tipo y numero Documento</label>
-                <div class="controls">
-                    <?php echo $form->getElement('tipoDocumento')->renderViewHelper() ?>            
-                    <?php echo $form->getElement('numeroDocumento')->renderViewHelper() ?>
+                    </div>
                 </div>
-            </div>
+                <div class="control-group">                                            
+                    <label class="control-label" for="idCargo">Cargo</label>
+                    <div class="controls">
+                        <?php echo $form->getElement('idCargo')->renderViewHelper() ?>
+                    </div>
+                </div>
+                <div class="control-group">                                            
+                    <label class="control-label" for="idTipoContrato">Tipo Contrato</label>
+                    <div class="controls">
+                        <?php echo $form->getElement('idTipoContrato')->renderViewHelper() ?>
+                    </div>
+                </div>        
+                <div class="form-actions">
+                    <?php echo $form->getElement('grabar')->renderViewHelper() ?> 
+                    <?php echo $form->getElement('limpiar')->renderViewHelper() ?> 
+                </div> 
+            </fieldset>
+        </form>
 
-            <div class="control-group">
-                <label class="control-label" for="primerNombre">Nombre</label>
-                <div class="controls">
-                    <?php echo $form->getElement('primerNombre')->renderViewHelper() ?>
-                    <?php echo $form->getElement('segundoNombre')->renderViewHelper() ?>
-                    <?php echo $form->getElement('primerApellido')->renderViewHelper() ?>
-                    <?php echo $form->getElement('segundoApellido')->renderViewHelper() ?>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label" for="estado">Estado</label>
-                <div class="controls">
-                    <?php echo $form->getElement('estado')->renderViewHelper() ?>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label" for="fechaNacimiento">Fecha Nacimiento</label>                    
-                <div class="controls">
-                    <?php echo $form->getElement('fechaNacimiento')->renderViewHelper() ?>
-                </div>
-            </div>            
-            <div class="control-group">                    
-                <label class="control-label" for="fechaIngreso">Fecha de ingreso</label>
-                <div class="controls">
+    <?php } else if ($formulario == 3) { ?>
+        <form action="<?php $form->getAction() ?>" method="<?php echo $form->getMethod() ?>" class="">
+            <div class="row">
+                <div class="span6">
+                    <label class="" for="fechaIngreso">Fecha de ingreso</label>
                     <?php echo $form->getElement('fechaIngreso')->renderViewHelper() ?>
                 </div>
-            </div>
-            <div class="control-group">                                
-                <label class="control-label" for="fechaRetiro">Fecha de retiro</label>
-                <div class="controls">
-                    <?php echo $form->getElement('fechaRetiro')->renderViewHelper() ?>
+                <div class="span6">
+                    <label class="" for="fechaRetiro">Fecha de retiro</label>
+                    <?php echo $form->getElement('fechaRetiro')->renderViewHelper() ?>                
                 </div>
             </div>
-            <div class="control-group">                                
-                <label class="control-label" for="salario">Salario</label>
-                <div class="controls">
-                    <div class="input-prepend input-append">
-                        <span class="add-on">$</span>
-                        <?php echo $form->getElement('salario')->renderViewHelper() ?>
-                        <span class="add-on">.00</span>
-                    </div>                        
-                </div>
-            </div>
-            <div class="control-group">                                            
-                <label class="control-label" for="idCargo">Cargo</label>
-                <div class="controls">
-                    <?php echo $form->getElement('idCargo')->renderViewHelper() ?>
-                </div>
-            </div>
-            <div class="control-group">                                            
-                <label class="control-label" for="idTipoContrato">Tipo Contrato</label>
-                <div class="controls">
-                    <?php echo $form->getElement('idTipoContrato')->renderViewHelper() ?>
-                </div>
-            </div>        
-            <div class="form-actions">
-                <?php echo $form->getElement('grabar')->renderViewHelper() ?> 
-                <?php echo $form->getElement('limpiar')->renderViewHelper() ?> 
-            </div> 
-        </fieldset>
-    </form>
-
-<?php }else if($formulario == 3){ ?>
-<form action="<?php $form->getAction() ?>" method="<?php echo $form->getMethod() ?>" class="">
-    <div class="row">
-        <div class="span6">
-            <label class="" for="fechaIngreso">Fecha de ingreso</label>
-            <?php echo $form->getElement('fechaIngreso')->renderViewHelper() ?>
-        </div>
-        <div class="span6">
-            <label class="" for="fechaRetiro">Fecha de retiro</label>
-            <?php echo $form->getElement('fechaRetiro')->renderViewHelper() ?>                
-        </div>
-    </div>
-</form>
-<?php } ?>
+        </form>
+    <?php } ?>
 </div>

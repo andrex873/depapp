@@ -13,15 +13,15 @@
         </thead>
         <tbody>
             <?php if ($this->personas) { ?>
-                <?php foreach ($this->personas as $clave => $valor) { ?>
+                <?php foreach ($this->personas as $valor) { ?>
                     <tr>
                         <td><?php echo $valor['tipoDocumento'] ?></td>
                         <td class="right"><?php echo fnFormatoNumero($valor['numeroDocumento']) ?></td>
                         <td><?php echo $valor['primerApellido'] . " " . $valor['segundoApellido'] ?></td>
                         <td><?php echo $valor['primerNombre'] . " " . $valor['segundoNombre'] ?></td>
                         <td>
-                            <a href="/personas/crear/id/<?php echo $valor['idPersona'] ?>" class="btn btn-mini btn-info"><i class="icon-pencil icon-white"></i> Editar</a>                                
-                            <a href="/personas/eliminar/id/<?php echo $valor['idPersona'] ?>" class="btn btn-mini btn-danger" data-confirm="¿Esta seguro que desea eliminar la persona?">
+                            <a href="/personas/modificar/uk/<?php echo fnEncriptar($valor['idPersona'], __CRYP_KEY__) ?>" class="btn btn-mini btn-info"><i class="icon-pencil icon-white"></i> Editar</a>                                
+                            <a href="/personas/eliminar/uk/<?php echo fnEncriptar($valor['idPersona'], __CRYP_KEY__) ?>" class="btn btn-mini btn-danger" data-confirm="¿Esta seguro que desea eliminar la persona?">
                                 <i class="icon-remove icon-white"></i> Eliminar
                             </a>
                         </td>                
